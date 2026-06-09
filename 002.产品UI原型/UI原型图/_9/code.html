@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>帮助中心 - 瓷砖品牌商城</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F5FF; /* Ultra Light Blue base from Style Guidance */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding-bottom: 16px;
+        }
+        .accordion-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(240, 240, 240, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#161c23",
+                      "divider-gray": "#F0F0F0",
+                      "warning-orange": "#FAAD14",
+                      "surface-container-highest": "#e4e2e1",
+                      "inverse-surface": "#303030",
+                      "secondary-container": "#dee3ed",
+                      "on-primary": "#ffffff",
+                      "deep-blue": "#096DD9",
+                      "on-secondary-container": "#5f656d",
+                      "on-primary-fixed-variant": "#004785",
+                      "surface-variant": "#e4e2e1",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "success-green": "#52C41A",
+                      "tertiary-fixed-dim": "#ffb3ae",
+                      "outline": "#707785",
+                      "primary-fixed": "#d4e3ff",
+                      "on-background": "#1b1c1c",
+                      "tertiary": "#b71423",
+                      "inverse-primary": "#a5c8ff",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf9f8",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#404753",
+                      "outline-variant": "#c0c7d6",
+                      "surface": "#fcf9f8",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#ffdad7",
+                      "surface-dim": "#dcd9d9",
+                      "surface-bright": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-white": "#FFFFFF",
+                      "text-gray": "#8C8C8C",
+                      "on-surface": "#1b1c1c",
+                      "surface-container-high": "#eae7e7",
+                      "surface-tint": "#005fae",
+                      "primary-fixed-dim": "#a5c8ff",
+                      "on-tertiary-container": "#fffbff",
+                      "primary": "#005daa",
+                      "secondary": "#595f67",
+                      "on-tertiary-fixed-variant": "#930016",
+                      "secondary-fixed": "#dee3ed",
+                      "on-primary-container": "#fefcff",
+                      "surface-container-lowest": "#ffffff",
+                      "hover-blue": "#40A9FF",
+                      "tertiary-container": "#db3239",
+                      "secondary-fixed-dim": "#c1c7d0",
+                      "surface-container": "#f0eded",
+                      "on-tertiary-fixed": "#410005",
+                      "on-primary-fixed": "#001c3a",
+                      "on-secondary-fixed-variant": "#41474f",
+                      "inverse-on-surface": "#f3f0ef",
+                      "primary-container": "#0075d5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "12px",
+                      "unit": "8px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "price-display": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F0F5FF] text-on-surface pb-24">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface-white border-b border-divider-gray">
+<div class="flex items-center gap-2">
+<button class="p-2 transition-colors duration-200 ease-in-out hover:bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">帮助中心</h1>
+</div>
+<button class="p-2 transition-colors duration-200 ease-in-out hover:bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</header>
+<!-- Hero Search Section -->
+<section class="mt-14 pt-10 pb-8 px-margin-mobile bg-gradient-to-b from-surface-white to-[#F0F5FF]">
+<div class="max-w-2xl mx-auto text-center mb-6">
+<h2 class="font-headline-lg text-headline-lg mb-2">有什么可以帮您？</h2>
+<p class="font-body-md text-body-md text-text-gray">搜索常见问题或查看分类指南</p>
+</div>
+<div class="relative max-w-lg mx-auto">
+<input class="w-full h-12 pl-12 pr-4 bg-surface-white border border-divider-gray rounded-xl focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-shadow duration-200 font-body-md" placeholder="搜索配送、损耗、铺贴..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-gray">search</span>
+</div>
+</section>
+<!-- Quick Navigation (Bento Layout) -->
+<section class="px-margin-mobile mb-8">
+<div class="grid grid-cols-2 gap-3 max-w-4xl mx-auto">
+<div class="bg-surface-white p-4 rounded-xl border border-divider-gray flex flex-col items-start gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded-lg" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label-md text-label-md">配送进度</span>
+</div>
+<div class="bg-surface-white p-4 rounded-xl border border-divider-gray flex flex-col items-start gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded-lg" style="font-variation-settings: 'FILL' 1;">calculate</span>
+<span class="font-label-md text-label-md">损耗计算器</span>
+</div>
+<div class="bg-surface-white p-4 rounded-xl border border-divider-gray flex flex-col items-start gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded-lg" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-label-md text-label-md">铺贴指导书</span>
+</div>
+<div class="bg-surface-white p-4 rounded-xl border border-divider-gray flex flex-col items-start gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded-lg" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+<span class="font-label-md text-label-md">退换货申请</span>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion Sections -->
+<main class="px-margin-mobile space-y-4 max-w-4xl mx-auto">
+<!-- Section: 配送相关 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray overflow-hidden">
+<div class="px-4 py-3 bg-surface-container-low border-b border-divider-gray">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">local_shipping</span> 配送服务
+                </h3>
+</div>
+<div class="divide-y divide-divider-gray">
+<div class="accordion-item px-4">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg font-medium">配送时间通常需要多久？</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">常规库房产品在下单后24-48小时内发货。同城配送通常为1-2天，跨省物流预计3-5个工作日。定制类产品请咨询客服确认工期。</p>
+</div>
+</div>
+<div class="accordion-item px-4">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg font-medium">配送过程中破损怎么办？</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">请在签收前开箱检查。如发现破损，请立即拍照留存，并在签收单上标注“异常签收”，联系售后客服将在24小时内为您安排补发。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: 损耗与计算 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray overflow-hidden">
+<div class="px-4 py-3 bg-surface-container-low border-b border-divider-gray">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">calculate</span> 损耗计算
+                </h3>
+</div>
+<div class="divide-y divide-divider-gray">
+<div class="accordion-item px-4">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg font-medium">瓷砖损耗量如何预估？</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">通常建议在实际铺贴面积基础上预留 5%-10% 的损耗。若采用菱形铺贴或工字铺等复杂工艺，建议预留 15% 左右的余量。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: 铺贴指导 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray overflow-hidden">
+<div class="px-4 py-3 bg-surface-container-low border-b border-divider-gray">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">architecture</span> 铺贴指导
+                </h3>
+</div>
+<div class="divide-y divide-divider-gray">
+<div class="accordion-item px-4">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg font-medium">大尺寸瓷砖铺贴需要注意什么？</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="space-y-2 py-2">
+<img alt="Tile Installation" class="w-full h-40 object-cover rounded-lg mb-2" data-alt="A professional construction worker meticulously applying premium adhesive to the back of a large-format porcelain tile. The setting is a bright, modern interior with clean architectural lines. High-key natural lighting emphasizes the precise geometric patterns and smooth texture of the gray tile. The scene conveys technical precision and architectural quality in a gallery-like environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgNo-MF6lZyVpteGJXkfoHVdww6X9l7wtApRbKQMQhG0X2GePWnUhSfkRCu8FuFMhMhu0mu--P-xMTxC1xostErQ9SpQ82dqdYcTTVnUdxOSh3b-LfKkbN_jWRbQ1zOP3NXw8J_KWjnIErAWLqXT-R9fn57e9bE6T08DkX6e_aPdEE1gfN5U5dPEFbvTJvkceelCAq8ndoBI4EbpO-GNL1Eq2ccDJZtkc9C2hiByzRXzentghfGSiffOC4lX4KGggG9yit_3P5pA"/>
+<p class="font-body-md text-body-md text-on-surface-variant">1. 使用瓷砖胶而非水泥砂浆以增强粘结力；2. 建议留缝 2mm 以上防止热胀冷缩；3. 必须使用找平器确保面层平整。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: 退换货规则 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray overflow-hidden">
+<div class="px-4 py-3 bg-surface-container-low border-b border-divider-gray">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">assignment_return</span> 退换货规则
+                </h3>
+</div>
+<div class="divide-y divide-divider-gray">
+<div class="accordion-item px-4">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-body-lg text-body-lg font-medium">未使用的散砖可以退货吗？</span>
+<span class="material-symbols-outlined arrow-icon transition-transform">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="font-body-md text-body-md text-on-surface-variant">在订单完成后30天内，包装完整、无污损、未泡水的整箱瓷砖可办理退换货。散砖由于批次色差及包装完整性要求，通常不支持退回。</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Contact Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-white shadow-lg border-t border-divider-gray px-margin-mobile py-4 flex items-center justify-between gap-4 pb-safe">
+<button class="flex-1 h-12 flex items-center justify-center gap-2 border border-primary text-primary rounded-xl font-label-md transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+            拨打服务热线
+        </button>
+<button class="flex-1 h-12 flex items-center justify-center gap-2 bg-primary text-on-primary rounded-xl font-label-md transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">forum</span>
+            在线人工客服
+        </button>
+</div>
+<script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Optional: Close other active accordions in the same section
+            const siblings = item.parentElement.querySelectorAll('.accordion-item');
+            siblings.forEach(sibling => {
+                if (sibling !== item) {
+                    sibling.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        }
+
+        // Search highlight simulation (Atmospheric effect)
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            document.body.classList.add('bg-white');
+            document.body.classList.remove('bg-[#F0F5FF]');
+            document.body.style.transition = 'background-color 0.5s ease';
+        });
+        searchInput.addEventListener('blur', () => {
+            document.body.classList.remove('bg-white');
+            document.body.classList.add('bg-[#F0F5FF]');
+        });
+    </script>
+</body></html>

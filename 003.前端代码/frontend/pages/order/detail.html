@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "inverse-surface": "#303030",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-surface": "#1b1c1c",
+                    "inverse-primary": "#a5c8ff",
+                    "divider-gray": "#F0F0F0",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-white": "#FFFFFF",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "outline": "#707785",
+                    "error": "#ba1a1a",
+                    "text-gray": "#8C8C8C",
+                    "surface-dim": "#dcd9d9",
+                    "success-green": "#52C41A",
+                    "primary": "#005daa",
+                    "on-background": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410005",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c0c7d6",
+                    "on-primary-container": "#fefcff",
+                    "surface-tint": "#005fae",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "tertiary-container": "#db3239",
+                    "secondary-container": "#dee3ed",
+                    "deep-blue": "#096DD9",
+                    "on-surface-variant": "#404753",
+                    "on-secondary-container": "#5f656d",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "secondary": "#595f67",
+                    "on-secondary-fixed": "#161c23",
+                    "background": "#fcf9f8",
+                    "secondary-fixed-dim": "#c1c7d0",
+                    "on-primary-fixed-variant": "#004785",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary": "#b71423",
+                    "hover-blue": "#40A9FF",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#dee3ed",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001c3a",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "warning-orange": "#FAAD14",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed": "#d4e3ff",
+                    "primary-container": "#0075d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "12px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "unit": "8px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "price-display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F0F5FF;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface-white dark:bg-inverse-surface w-full sticky top-0 z-50 border-b border-divider-gray dark:border-outline-variant flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile py-sm w-full">
+<button class="text-primary dark:text-primary-fixed-dim active:opacity-70 transition-opacity" onclick="location.href='../order/list.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim">LUXE TILES</h1>
+<button class="text-primary dark:text-primary-fixed-dim active:opacity-70 transition-opacity" onclick="location.href='../product/search.html'">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-margin-mobile py-lg pb-32">
+<!-- Status Banner -->
+<section class="mb-lg bg-primary-container rounded-xl p-md flex items-center gap-md">
+<div class="bg-surface-white rounded-full p-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-primary-container opacity-80 uppercase tracking-wider">订单状态</p>
+<h2 class="font-headline-sm text-headline-sm text-on-primary-container">已发货</h2>
+</div>
+<div class="ml-auto text-right">
+<p class="font-label-sm text-label-sm text-on-primary-container opacity-80">预计送达</p>
+<p class="font-body-md text-body-md text-on-primary-container font-semibold">2023年10月24日</p>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Left Column: Order Items & Timeline -->
+<div class="md:col-span-2 space-y-lg">
+<!-- Order Items -->
+<section class="bg-surface-white border border-divider-gray rounded-xl overflow-hidden">
+<div class="p-md border-b border-divider-gray flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm">商品清单</h3>
+<span class="text-text-gray font-label-sm text-label-sm">订单号 #LX-99281</span>
+</div>
+<div class="divide-y divide-divider-gray">
+<!-- Item 1 -->
+<div class="p-md flex gap-md cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="w-24 h-24 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a high-end Calacatta marble tile showing elegant grey veining on a pristine white surface. The lighting is soft and architectural, highlighting the polished texture and luxurious finish of the stone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_M1PPKpo6Pbvy4dM4xea-mvN7AI1CBdV5eB__i4E9KZyOwHPgjlKJ71Ui5mVZveBmw35evfy0KL6chJUpSiia5nU4kcbScw4SB5MF6DWtOq-QK7VDGQ3vQ-UfaAZaalXIWxw9qGkG2AJZeFOFd9zmGx8NS2g2Q9XCpXkoSkYskKFbyBifNQKzGUX7S3sU9J0BCXe2ovVM3yv2pJoo9IGT0WXyTFtdui4bZTcBtrlaovDYyMyA-TzNiw6vbjuy4yrVK2ppOCU_6w">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-body-lg text-body-lg font-semibold">卡拉卡拉金抛光大理石</h4>
+<p class="font-price-display text-price-display text-primary">$445.00</p>
+</div>
+<div class="mt-xs text-text-gray text-body-sm space-y-px">
+<p class="">尺寸: 24" x 24"</p>
+<p class="">表面处理: 高亮</p>
+<p class="">数量: 5 箱 (110 sq ft)</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-md flex gap-md cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="w-24 h-24 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A textured ceramic tile in a deep slate grey with subtle metallic glints. The tile surface shows a modern, geometric linear pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUUznEtvcQv8dNlfX1rZsZE5YSTMTSxxBJk0Un95HrulE4f6_QjII0eRXZ29aojzV6jsSAx_4q5O44SZytwrDTi-GwRncHhegeL9pB11RNXPBVWYcABEe-j2KW0m8IlOVX-PsjoTBr8ktCQ3JW-vz96wCmzQuzQIc7B5xYA3pxYF9Dux3MFhHevKrTH8C2sXaYB95ccmnAQKOW8eZ2-EL4Hmfhc925dP4VHmImlj90rmPvYLOiMS2fcBmDWdnP3cgW5eldxKTWJQ">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-body-lg text-body-lg font-semibold">工业岩板陶瓷砖</h4>
+<p class="font-price-display text-price-display text-primary">$280.00</p>
+</div>
+<div class="mt-xs text-text-gray text-body-sm space-y-px">
+<p class="">尺寸: 12" x 24"</p>
+<p class="">表面处理: 哑光防滑</p>
+<p class="">数量: 2 箱 (44 sq ft)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Timeline -->
+<section class="bg-surface-white border border-divider-gray rounded-xl p-md">
+<h3 class="font-headline-sm text-headline-sm mb-lg">订单进度</h3>
+<div class="relative space-y-lg">
+<!-- Vertical Line -->
+<div class="absolute left-4 top-1 bottom-1 w-0.5 bg-divider-gray"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center gap-lg">
+<div class="z-10 w-8 h-8 rounded-full bg-success-green flex items-center justify-center text-surface-white">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-semibold">订单已创建</p>
+<p class="text-text-gray text-body-sm">2023年10月18日 · 09:12 AM</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center gap-lg">
+<div class="z-10 w-8 h-8 rounded-full bg-success-green flex items-center justify-center text-surface-white">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-semibold">支付已确认</p>
+<p class="text-text-gray text-body-sm">2023年10月18日 · 09:15 AM</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-center gap-lg">
+<div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-surface-white">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-semibold">仓库已发货</p>
+<p class="text-text-gray text-body-sm">2023年10月20日 · 02:30 PM</p>
+<p class="mt-sm p-sm bg-surface-container rounded border border-divider-gray text-body-sm text-primary">
+                                    运单号: <span class="font-mono">LUXE-882-991-XP</span>
+</p>
+</div>
+</div>
+<!-- Timeline Item 4 (Future) -->
+<div class="relative flex items-center gap-lg opacity-40">
+<div class="z-10 w-8 h-8 rounded-full bg-divider-gray flex items-center justify-center text-text-gray">
+<span class="material-symbols-outlined text-sm" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="flex-grow">
+<p class="font-body-md text-body-md font-semibold">派送中</p>
+<p class="text-text-gray text-body-sm">预计 10月24日</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Delivery & Summary -->
+<div class="space-y-lg">
+<!-- Delivery Address -->
+<section class="bg-surface-white border border-divider-gray rounded-xl p-md">
+<div class="flex items-center gap-sm mb-md text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<h3 class="font-label-md text-label-md font-bold uppercase tracking-wide">收货地址</h3>
+</div>
+<div class="space-y-xs">
+<p class="font-body-md text-body-md font-semibold">Sarah Jenkins</p>
+<p class="text-text-gray text-body-md">482 Architectural Way</p>
+<p class="text-text-gray text-body-md">Suite 200, Design District</p>
+<p class="text-text-gray text-body-md">New York, NY 10012</p>
+<p class="text-text-gray text-body-md">电话: +1 (555) 902-1244</p>
+</div>
+</section>
+<!-- Payment Summary -->
+<section class="bg-surface-white border border-divider-gray rounded-xl p-md">
+<div class="flex items-center gap-sm mb-md text-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h3 class="font-label-md text-label-md font-bold uppercase tracking-wide">支付明细</h3>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between text-body-md">
+<span class="text-text-gray">商品总额</span>
+<span class="text-on-surface">$725.00</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-text-gray">物流费用</span>
+<span class="text-success-green">免运费</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-text-gray">保险</span>
+<span class="text-on-surface">$12.50</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-text-gray">税费</span>
+<span class="text-on-surface">$58.00</span>
+</div>
+<div class="pt-sm border-t border-divider-gray flex justify-between">
+<span class="font-headline-sm text-headline-sm">实付金额</span>
+<span class="font-price-display text-price-display text-primary">$795.50</span>
+</div>
+</div>
+<div class="mt-lg p-sm bg-surface-container-low rounded-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-text-gray" data-icon="credit_card">credit_card</span>
+<p class="text-body-sm text-text-gray">使用 Visa (尾号 4492) 支付</p>
+</div>
+</section>
+<!-- Helpful Links -->
+<div class="space-y-sm">
+<button class="w-full flex items-center justify-between p-md bg-surface-white border border-divider-gray rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-text-gray" data-icon="description">description</span>
+<span class="font-body-md text-body-md">下载发票 (PDF)</span>
+</div>
+<span class="material-symbols-outlined text-text-gray" data-icon="download">download</span>
+</button>
+<button class="w-full flex items-center justify-between p-md bg-surface-white border border-divider-gray rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-text-gray" data-icon="history">history</span>
+<span class="font-body-md text-body-md">查看退换货政策</span>
+</div>
+<span class="material-symbols-outlined text-text-gray" data-icon="chevron_right">chevron_right</span>
+</button><button class="w-full flex items-center justify-between p-md bg-surface-white border border-divider-gray rounded-lg hover:bg-surface-container-low transition-colors" onclick="location.href='../order/refund.html'">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-text-gray" data-icon="assignment_return">assignment_return</span>
+<span class="font-body-md text-body-md">申请售后</span>
+</div>
+<span class="material-symbols-outlined text-text-gray" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface-white dark:bg-inverse-surface border-t border-divider-gray dark:border-outline-variant shadow-sm px-margin-mobile py-sm pb-safe flex gap-sm items-center">
+<button class="flex-1 flex items-center justify-center gap-sm h-11 px-lg border border-primary text-primary rounded-lg font-label-md text-label-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="support_agent">support_agent</span>
+            联系客服
+        </button>
+<button class="flex-1 flex items-center justify-center gap-sm h-11 px-lg bg-primary text-surface-white rounded-lg font-label-md text-label-md active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="done_all">done_all</span>
+            确认收货
+        </button>
+</footer>
+<script src="../../assets/js/common.js"></script>
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.add('opacity-50');
+                setTimeout(() => this.classList.remove('opacity-50'), 150);
+            });
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>我的订单 - 瓷砖品牌商城</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "inverse-surface": "#303030",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-surface": "#1b1c1c",
+                    "inverse-primary": "#a5c8ff",
+                    "divider-gray": "#F0F0F0",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-white": "#FFFFFF",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "outline": "#707785",
+                    "error": "#ba1a1a",
+                    "text-gray": "#8C8C8C",
+                    "surface-dim": "#dcd9d9",
+                    "success-green": "#52C41A",
+                    "primary": "#005daa",
+                    "on-background": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410005",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c0c7d6",
+                    "on-primary-container": "#fefcff",
+                    "surface-tint": "#005fae",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "tertiary-container": "#db3239",
+                    "secondary-container": "#dee3ed",
+                    "deep-blue": "#096DD9",
+                    "on-surface-variant": "#404753",
+                    "on-secondary-container": "#5f656d",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "secondary": "#595f67",
+                    "on-secondary-fixed": "#161c23",
+                    "background": "#fcf9f8",
+                    "secondary-fixed-dim": "#c1c7d0",
+                    "on-primary-fixed-variant": "#004785",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary": "#b71423",
+                    "hover-blue": "#40A9FF",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#dee3ed",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001c3a",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "warning-orange": "#FAAD14",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed": "#d4e3ff",
+                    "primary-container": "#0075d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "12px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "unit": "8px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "price-display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #F0F5FF; /* Ultra Light Blue base as per guidance */
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .active-tab-underline {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #005daa;
+      }
+      /* Custom scrollbar for horizontal tabs */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface dark:bg-on-background border-b border-divider-gray dark:border-on-secondary-fixed-variant transition-colors duration-200 ease-in-out">
+<button class="p-xs hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">陶瓷品牌商城</h1>
+<button class="p-xs hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="search">search</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<main class="mt-14 p-margin-mobile">
+<!-- Page Title & Tabs -->
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">我的订单</h2>
+<!-- Sticky Tabs -->
+<div class="sticky top-14 bg-inherit z-40 -mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar border-b border-divider-gray">
+<nav class="flex space-x-lg">
+<a class="relative py-md whitespace-nowrap text-primary font-bold font-label-md text-label-md" href="#">
+                        全部
+                        <span class="active-tab-underline"></span>
+</a>
+<a class="py-md whitespace-nowrap text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">待付款</a>
+<a class="py-md whitespace-nowrap text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">进行中</a>
+<a class="py-md whitespace-nowrap text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">已完成</a>
+</nav>
+</div>
+</div>
+<!-- Order List -->
+<div class="space-y-md">
+<!-- Order Card 1: Pending Payment -->
+<article class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col transition-all hover:shadow-[0_8px_24px_-12px_rgba(0,0,0,0.05)]">
+<div class="px-md py-sm flex justify-between items-center bg-surface-container-low/50">
+<span class="font-body-sm text-body-sm text-text-gray">订单号: ORD-20231024-8892</span>
+<span class="px-sm py-xs bg-warning-orange/10 text-warning-orange font-label-sm text-label-sm rounded-full">待付款</span>
+</div>
+<div class="p-md space-y-md">
+<div class="flex items-center space-x-sm overflow-x-auto no-scrollbar">
+<div class="flex-shrink-0 w-20 h-20 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of a high-end Calacatta marble tile with intricate grey and gold veining on a pristine white background. The lighting is bright and even, highlighting the polished texture and luxurious architectural quality. The visual style is minimalist and clean, matching a modern sky-blue professional design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPGERbUVB7g2Hsg81kO3BFrcXCY3gGgJaqN8f5s014Ym5Gfso_cDiIURHM4n8hXJ1XPX9eeoE7oT9m7N-sH6zKTodpA2ekOKrR6dlOoEB1QY7WMsFnvCT_1sE-TsmEJDunvLxnYvSAqJmxl8Ev1R8klfzP5gqaPgA_uuuvL178ThfhP7yH084__L6ovqj4JCCHEGIIQgvmSLPLC50anSXzZjXRGTFaseCgndc5RoRU6QrkVS92soR3V5nMotyQLCWwDhhur-CfqQ">
+</div>
+<div class="flex-shrink-0 w-20 h-20 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a charcoal grey slate-textured ceramic tile. The image emphasizes the rugged, natural geometric patterns and the matte finish of the material. Soft shadows play across the surface to define the tactile ridges, maintaining a professional and high-quality aesthetic consistent with premium construction materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuN-NLe6GGrhZ7QYXs-A55K47Vseu3F_b-YMp2aBtYZ6HuAdks8D2impHXC-87sHjqtgsTA1jmFhiqgnuE77UzdoiTn0SCiZF1XxQR4vxJf23WsSbOVkCJK_bpsLeGpXAxPGZbtR1WSsmKlSpJZuq5s0Cw78Y1Z2z9gFzXKGPc3nN6HFPDtjTipb853CX_JjOXgQwYPYwtQXaSM0wknKmAVEb1Ow8606qeayxPEM6j0BQZ8ZT-pxhAtHKn-Fb4Ayp5eYO73U-T0w">
+</div>
+<div class="flex flex-col justify-center pl-xs">
+<span class="font-label-sm text-label-sm text-on-surface">共 2 件商品</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-divider-gray pt-md">
+<div>
+<p class="font-body-sm text-body-sm text-text-gray">实付金额</p>
+<p class="font-price-display text-price-display text-primary">¥ 3,280.00</p>
+</div>
+<div class="flex space-x-sm items-center">
+<button class="h-[44px] px-md rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors whitespace-nowrap">取消订单</button>
+<button class="h-[44px] px-md rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-deep-blue transition-colors whitespace-nowrap">立即付款</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Order Card 2: Processing -->
+<article class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col transition-all hover:shadow-[0_8px_24px_-12px_rgba(0,0,0,0.05)]">
+<div class="px-md py-sm flex justify-between items-center bg-surface-container-low/50">
+<span class="font-body-sm text-body-sm text-text-gray">订单号: ORD-20231020-4122</span>
+<span class="px-sm py-xs bg-primary/10 text-primary font-label-sm text-label-sm rounded-full">进行中</span>
+</div>
+<div class="p-md space-y-md">
+<div class="flex items-center space-x-md">
+<div class="flex-shrink-0 w-20 h-20 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An architectural detail of a large format porcelain tile with a soft sand-colored concrete finish. The image is captured in a bright, modern interior setting with natural light casting gentle gradients across the tile surface. The professional atmosphere is clean, spacious, and evokes high-end construction precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArAqnHfNF6oRQXupvTQir4eWc_ntJXCeBecUznHUt38PENHmcxFai-KtJzk01JmI7lUsqpj0LUk3xs8kjGnlfKUtxlpBTI5tITUVFFiHbsZI9KnngTm6bpa1panEGPz3lvbZJzfE6xK6unFSsx5xfct7b7HOersEXI__qFB1_ykADUe_NINk8p2Xxyf1WOpqU-R31zPHDUobIEMDX-nDxSzUjH530NBPeLReA_zhXTYxZs6uBx3IKsHMFbQzYQKIDRzCTFs1lLaQ">
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md text-on-surface truncate">砂岩系列 亚光防滑地砖 (600x1200mm)</h3>
+<p class="font-body-sm text-body-sm text-text-gray mt-xs">规格: 浅米色 | 24片</p>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-divider-gray pt-md">
+<div>
+<p class="font-body-sm text-body-sm text-text-gray">实付金额</p>
+<p class="font-price-display text-price-display text-on-surface">¥ 1,560.00</p>
+</div>
+<div class="flex space-x-sm items-center">
+<button class="h-[44px] px-md rounded-full border border-divider-gray text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors whitespace-nowrap">
+<span class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+                                    联系客服
+                                </span>
+</button>
+<button class="h-[44px] px-md rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors whitespace-nowrap">查看详情</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Order Card 3: Completed -->
+<article class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col opacity-90 grayscale-[0.2] transition-all hover:grayscale-0 hover:opacity-100 hover:shadow-[0_8px_24px_-12px_rgba(0,0,0,0.05)]">
+<div class="px-md py-sm flex justify-between items-center bg-surface-container-low/50">
+<span class="font-body-sm text-body-sm text-text-gray">订单号: ORD-20230915-0012</span>
+<span class="px-sm py-xs bg-success-green/10 text-success-green font-label-sm text-label-sm rounded-full">已完成</span>
+</div>
+<div class="p-md space-y-md">
+<div class="flex items-center space-x-md">
+<div class="flex-shrink-0 w-20 h-20 rounded bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detail shot of Moroccan-style patterned ceramic tiles with vibrant blue and white geometric motifs. The lighting is crisp and cool, highlighting the glazed finish and artisanal quality. The scene is clean and organized, conveying a gallery-like feeling consistent with a high-end tile showroom experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASwjkkCFSSfXMAeGhlXdesF6TQazGZkzQD7Nii7RIx71oSrWdI9xZZiPQ2HQjJOvuuVlFnu1M9vKytvV4nFciSC1qIQs0Nmr_3kZQ2WUsd_yD74CLNixzOcVcaUB7L_yOZ9HmNhkqJkUNU3dSX7IAAQcGya8tyFS2eEmEdtW5QpMuXRO929IVMKOY2kRBv096wMe_4tXz9nZxJRYAdIxTIcP6ZCAJbEdNXaC9N2X6YvlJpdaHh-dOpiSv-6lbH1gFzjQ5IKbAdBw">
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md text-on-surface truncate">摩洛哥复古花砖系列</h3>
+<p class="font-body-sm text-body-sm text-text-gray mt-xs">规格: 蓝调花纹 | 120片</p>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-divider-gray pt-md">
+<div>
+<p class="font-body-sm text-body-sm text-text-gray">实付金额</p>
+<p class="font-price-display text-price-display text-on-surface">¥ 12,800.00</p>
+</div>
+<div class="flex space-x-sm items-center"><button class="h-[44px] px-md rounded-full border border-divider-gray text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors whitespace-nowrap">申请售后</button>
+<button class="h-[44px] px-md rounded-full border border-divider-gray text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors whitespace-nowrap">
+                                评价订单
+                            </button>
+<button class="h-[44px] px-md rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors whitespace-nowrap">再次购买</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State Hint (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-20 text-center">
+<span class="material-symbols-outlined text-[64px] text-divider-gray mb-md" data-icon="inventory_2">inventory_2</span>
+<p class="font-body-lg text-body-lg text-text-gray">暂无相关订单</p>
+<button class="mt-md px-lg py-sm bg-primary text-on-primary rounded-full font-label-md text-label-md">去逛逛</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-sm bg-surface-white dark:bg-inverse-surface border-t border-divider-gray dark:border-outline-variant pb-safe shadow-lg">
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person" data-weight="fill">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for tab switching
+        const tabs = document.querySelectorAll('nav.flex a');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabs.forEach(t => {
+                    t.classList.remove('text-primary', 'font-bold');
+                    t.classList.add('text-on-surface-variant');
+                    const underline = t.querySelector('.active-tab-underline');
+                    if (underline) underline.remove();
+                });
+                
+                tab.classList.add('text-primary', 'font-bold');
+                tab.classList.remove('text-on-surface-variant');
+                const underline = document.createElement('span');
+                underline.className = 'active-tab-underline';
+                tab.appendChild(underline);
+            });
+        });
+
+        // Simple scale effect for cards on press
+        const cards = document.querySelectorAll('article');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

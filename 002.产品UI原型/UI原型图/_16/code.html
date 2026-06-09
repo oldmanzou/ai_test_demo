@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>个人中心 - 陶瓷品牌商城</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#dee3ed",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "error": "#ba1a1a",
+                    "on-background": "#1b1c1c",
+                    "deep-blue": "#096DD9",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-fixed": "#d4e3ff",
+                    "surface-container-highest": "#e4e2e1",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-white": "#FFFFFF",
+                    "tertiary-container": "#db3239",
+                    "on-secondary-container": "#5f656d",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#595f67",
+                    "inverse-on-surface": "#f3f0ef",
+                    "hover-blue": "#40A9FF",
+                    "on-error-container": "#93000a",
+                    "success-green": "#52C41A",
+                    "primary": "#005daa",
+                    "on-tertiary": "#ffffff",
+                    "divider-gray": "#F0F0F0",
+                    "on-tertiary-fixed": "#410005",
+                    "primary-container": "#0075d5",
+                    "outline-variant": "#c0c7d6",
+                    "surface-container": "#f0eded",
+                    "background": "#fcf9f8",
+                    "on-primary-fixed": "#001c3a",
+                    "secondary-fixed": "#dee3ed",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "warning-orange": "#FAAD14",
+                    "on-surface-variant": "#404753",
+                    "tertiary": "#b71423",
+                    "on-primary-container": "#fefcff",
+                    "secondary-fixed-dim": "#c1c7d0",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-high": "#eae7e7",
+                    "surface-bright": "#fcf9f8",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "outline": "#707785",
+                    "on-secondary-fixed": "#161c23",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "surface-tint": "#005fae",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary-fixed-variant": "#004785",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a5c8ff",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "text-gray": "#8C8C8C"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "unit": "8px",
+                    "xs": "4px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "price-display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f0f5ff; /* Brand Ultra Light Blue */
+        }
+        .profile-header-bg {
+            background: linear-gradient(180deg, #d4e3ff 0%, #f0f5ff 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- Top AppBar (JSON Component Map) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface dark:bg-on-background border-b border-divider-gray dark:border-on-secondary-fixed-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">陶瓷品牌商城</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer">search</span>
+</div>
+</header>
+<main class="pt-14 pb-24">
+<!-- Profile Header Section -->
+<section class="profile-header-bg px-margin-mobile pt-lg pb-xl">
+<div class="flex items-center gap-md">
+<div class="relative">
+<img class="w-20 h-20 rounded-full border-4 border-surface-white object-cover shadow-sm" data-alt="A professional close-up portrait of a sophisticated modern homeowner in a bright, airy architectural space. The person has a friendly, confident expression, set against a background of minimalist interior design with soft, natural morning light. The color palette is composed of clean whites and gentle sky blues, reflecting a high-end, professional retail brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPNjYnlXROOUDkPtSirwOWY6etf3RHRWYCwPIYbpqo8mrfOx2OXC95jwcQpWKTYrW3lGPoyhxF681uc9c-hoMu84v4mAs7qNFPtVLa5erdBYXB6RxjYleyj5Y3MBgnPli0kLlIn4HzHmarH32y1WSgSt-IpmVE2HL8ynk0v9zHY8h9-3echWhEGihYZjXPf5xyTfMoeXWCfw4bIWRkdk3ovFELXjT9m4gbIyNmTTCWDsK-GjB758hcJ2pU03lgkCFlMFNKYJBKUQ">
+<div class="absolute bottom-0 right-0 bg-success-green w-4 h-4 rounded-full border-2 border-surface-white"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-background">李建国</h2>
+<div class="flex">
+<span class="bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">home</span>
+                            家装业主
+                        </span>
+</div>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-outline cursor-pointer">settings</span>
+</div>
+</div>
+</section>
+<!-- Order Entry Cards -->
+<section class="px-margin-mobile -mt-xl relative z-10">
+<div class="bg-surface-white rounded-xl shadow-sm border border-divider-gray p-md">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-background">订单中心</h3>
+<div class="flex items-center text-text-gray font-label-md text-label-md cursor-pointer">
+                        全部订单 <span class="material-symbols-outlined text-sm ml-xs">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-md">
+<div class="flex flex-col items-center gap-xs cursor-pointer relative group">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-[28px] transition-transform group-active:scale-90">account_balance_wallet</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">待付款</span>
+</div>
+<div class="flex flex-col items-center gap-xs cursor-pointer relative group">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-[28px] transition-transform group-active:scale-90">local_shipping</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">1</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">待发货</span>
+</div>
+<div class="flex flex-col items-center gap-xs cursor-pointer relative group">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-[28px] transition-transform group-active:scale-90">verified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">已完成</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Functional List -->
+<section class="px-margin-mobile mt-lg">
+<div class="bg-surface-white rounded-xl border border-divider-gray overflow-hidden">
+<div class="flex items-center p-md border-b border-divider-gray active:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-secondary-container mr-md">receipt_long</span>
+<span class="flex-grow font-body-lg text-body-lg text-on-surface">全部订单查询</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="flex items-center p-md border-b border-divider-gray active:bg-surface-container-low transition-colors cursor-pointer group" onclick="window.location.href='{{DATA:SCREEN:SCREEN_10}}'">
+<span class="material-symbols-outlined text-on-secondary-container mr-md">location_on</span>
+<span class="flex-grow font-body-lg text-body-lg text-on-surface">收货地址管理</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="flex items-center p-md border-b border-divider-gray active:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-secondary-container mr-md">smartphone</span>
+<div class="flex-grow flex justify-between items-center mr-xs">
+<span class="font-body-lg text-body-lg text-on-surface">手机号绑定</span>
+<span class="font-body-md text-body-md text-text-gray">138****8888</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="flex items-center p-md border-b border-divider-gray active:bg-surface-container-low transition-colors cursor-pointer group" onclick="window.location.href='{{DATA:SCREEN:SCREEN_2}}'">
+<span class="material-symbols-outlined text-on-secondary-container mr-md">help_outline</span>
+<span class="flex-grow font-body-lg text-body-lg text-on-surface">帮助中心</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div><div class="flex items-center p-md active:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-secondary-container mr-md">support_agent</span>
+<span class="flex-grow font-body-lg text-body-lg text-on-surface">在线联系客服</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Logout Action -->
+<section class="px-margin-mobile mt-xl mb-lg">
+<button class="w-full h-[48px] border border-error rounded-xl font-headline-sm text-headline-sm text-error active:bg-error-container active:border-transparent transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">logout</span>
+                注销账号
+            </button>
+<p class="text-center font-body-sm text-body-sm text-text-gray mt-md">版本号 2.4.0 (Build 20231012)</p>
+</section>
+</main>
+<!-- Bottom Navigation Bar (JSON Component Map) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-sm bg-surface-white dark:bg-inverse-surface pb-safe rounded-t-lg shadow-lg border-t border-divider-gray dark:border-outline-variant">
+<div class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</div>
+<div class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</div>
+<div class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:opacity-80 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</div>
+<!-- Active Tab: Profile/我的 -->
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:opacity-80 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</div>
+</nav>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('.active\\:bg-surface-container-low').forEach(el => {
+            el.addEventListener('touchstart', () => el.classList.add('opacity-70'));
+            el.addEventListener('touchend', () => el.classList.remove('opacity-70'));
+        });
+    </script>
+
+
+
+
+</body></html>

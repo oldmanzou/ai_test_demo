@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#161c23",
+                    "divider-gray": "#F0F0F0",
+                    "warning-orange": "#FAAD14",
+                    "surface-container-highest": "#e4e2e1",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#dee3ed",
+                    "on-primary": "#ffffff",
+                    "deep-blue": "#096DD9",
+                    "on-secondary-container": "#5f656d",
+                    "on-primary-fixed-variant": "#004785",
+                    "surface-variant": "#e4e2e1",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "success-green": "#52C41A",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "outline": "#707785",
+                    "primary-fixed": "#d4e3ff",
+                    "on-background": "#1b1c1c",
+                    "tertiary": "#b71423",
+                    "inverse-primary": "#a5c8ff",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#404753",
+                    "outline-variant": "#c0c7d6",
+                    "surface": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-dim": "#dcd9d9",
+                    "surface-bright": "#fcf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-white": "#FFFFFF",
+                    "text-gray": "#8C8C8C",
+                    "on-surface": "#1b1c1c",
+                    "surface-container-high": "#eae7e7",
+                    "surface-tint": "#005fae",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "on-tertiary-container": "#fffbff",
+                    "primary": "#005daa",
+                    "secondary": "#595f67",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "secondary-fixed": "#dee3ed",
+                    "on-primary-container": "#fefcff",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#410005",
+                    "on-primary-fixed": "#001c3a",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-container": "#0075d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "12px",
+                    "unit": "8px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "price-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+  </head>
+<body class="bg-[#F0F5FF] font-body-md text-on-surface">
+<!-- Header (TopAppBar Mapping) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface border-b border-divider-gray">
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors duration-200" onclick="window.location.href='./address-list.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">编辑收货地址</h1>
+</div>
+<button class="text-primary font-label-md" onclick="window.location.href='./address-list.html'">删除</button>
+</header>
+<main class="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto space-y-md">
+<!-- Smart Recognition Section -->
+<section class="bg-surface-white rounded-lg border border-divider-gray p-md overflow-hidden">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+                    智能地址识别
+                </span>
+<button class="text-text-gray font-label-sm" onclick="clearRecognition()">清空</button>
+</div>
+<textarea class="w-full h-20 bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary rounded-lg p-sm text-body-md placeholder-text-gray resize-none transition-all" id="smart-input" placeholder="粘贴收货地址、姓名和电话，系统将自动拆分..."></textarea>
+<div class="mt-sm flex justify-end">
+<button class="px-lg h-9 bg-primary-container text-primary font-label-md rounded-full transition-all active:scale-95" onclick="recognizeAddress()">
+                    立即识别
+                </button>
+</div>
+</section>
+<!-- Address Form Section -->
+<section class="bg-surface-white rounded-lg border border-divider-gray">
+<!-- Contact Name -->
+<div class="flex items-center px-md py-lg border-b border-divider-gray">
+<label class="w-24 font-label-md text-on-surface-variant">收货人</label>
+<input class="flex-1 border-none focus:ring-0 text-body-md p-0 placeholder-text-gray bg-transparent" id="name-input" placeholder="请输入姓名" type="text"/>
+</div>
+<!-- Mobile -->
+<div class="flex items-center px-md py-lg border-b border-divider-gray">
+<label class="w-24 font-label-md text-on-surface-variant">手机号码</label>
+<input class="flex-1 border-none focus:ring-0 text-body-md p-0 placeholder-text-gray bg-transparent" id="phone-input" placeholder="请输入手机号" type="tel"/>
+</div>
+<!-- Region Selector -->
+<div class="flex items-center px-md py-lg border-b border-divider-gray cursor-pointer tap-highlight-transparent hover:bg-surface-container-lowest transition-colors" onclick="openRegionPicker()">
+<label class="w-24 font-label-md text-on-surface-variant">所在地区</label>
+<div class="flex-1 flex justify-between items-center">
+<span class="text-text-gray text-body-md" id="region-display">请选择省市区</span>
+<span class="material-symbols-outlined text-text-gray">chevron_right</span>
+</div>
+</div>
+<!-- Detailed Address -->
+<div class="px-md py-lg border-b border-divider-gray">
+<div class="flex items-start">
+<label class="w-24 font-label-md text-on-surface-variant pt-1">详细地址</label>
+<textarea class="flex-1 border-none focus:ring-0 text-body-md p-0 placeholder-text-gray bg-transparent min-h-[60px] resize-none" id="detail-input" placeholder="如街道、门牌号、小区/大厦等"></textarea>
+</div>
+</div>
+<!-- Default Address Toggle -->
+<div class="flex items-center justify-between px-md py-lg">
+<div>
+<p class="font-label-md text-on-surface">设为默认地址</p>
+<p class="text-label-sm text-text-gray">下单时将优先使用该地址</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-divider-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</section>
+</main>
+<!-- Bottom Action Button -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-white border-t border-divider-gray px-margin-mobile py-sm safe-pb">
+<button class="w-full h-12 bg-primary text-on-primary font-headline-sm rounded-lg shadow-sm active:scale-[0.98] transition-all flex items-center justify-center gap-2" onclick="handleSave()">
+            保存并使用
+        </button>
+</div>
+<!-- Region Picker Modal (Backdrop) -->
+<div class="fixed inset-0 bg-black/40 z-[100] hidden flex-col justify-end transition-opacity duration-300 opacity-0" id="region-modal">
+<div class="bg-surface-white rounded-t-xl w-full max-h-[618px] flex flex-col translate-y-full transition-transform duration-300" id="region-content">
+<div class="flex items-center justify-between px-md py-lg border-b border-divider-gray">
+<span class="font-headline-sm">选择所在地区</span>
+<button class="material-symbols-outlined text-text-gray" onclick="closeRegionPicker()">close</button>
+</div>
+<div class="flex-1 overflow-y-auto p-md space-y-lg">
+<!-- Simple selection list simulation -->
+<div class="space-y-sm">
+<p class="text-label-sm text-text-gray px-sm">常用城市</p>
+<div class="grid grid-cols-3 gap-sm">
+<button class="h-10 border border-divider-gray rounded-lg text-body-sm hover:border-primary hover:text-primary transition-all" onclick="selectRegion('广东省 佛山市 禅城区')">佛山市</button>
+<button class="h-10 border border-divider-gray rounded-lg text-body-sm hover:border-primary hover:text-primary transition-all" onclick="selectRegion('上海市 上海市 浦东新区')">上海市</button>
+<button class="h-10 border border-divider-gray rounded-lg text-body-sm hover:border-primary hover:text-primary transition-all" onclick="selectRegion('北京市 北京市 朝阳区')">北京市</button>
+</div>
+</div>
+<div class="border-t border-divider-gray pt-md">
+<div class="flex gap-lg border-b border-divider-gray pb-sm">
+<span class="text-primary font-label-md border-b-2 border-primary pb-sm">请选择省份</span>
+<span class="text-text-gray font-label-md">城市</span>
+<span class="text-text-gray font-label-md">区县</span>
+</div>
+<ul class="mt-md space-y-md h-64 overflow-y-auto">
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer" onclick="selectRegion('广东省 广州市 天河区')">广东省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">浙江省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">江苏省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">福建省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">山东省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">四川省</li>
+<li class="py-sm px-sm hover:bg-surface-container-lowest rounded cursor-pointer">湖北省</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Toast -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-on-background/90 text-on-primary px-lg py-sm rounded-full text-label-md z-[200] opacity-0 transition-opacity pointer-events-none" id="toast">
+        地址保存成功
+    </div>
+<script>
+        function openRegionPicker() {
+            const modal = document.getElementById('region-modal');
+            const content = document.getElementById('region-content');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                content.classList.remove('translate-y-full');
+            }, 10);
+        }
+
+        function closeRegionPicker() {
+            const modal = document.getElementById('region-modal');
+            const content = document.getElementById('region-content');
+            modal.classList.remove('opacity-100');
+            content.classList.add('translate-y-full');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function selectRegion(val) {
+            document.getElementById('region-display').innerText = val;
+            document.getElementById('region-display').classList.remove('text-text-gray');
+            document.getElementById('region-display').classList.add('text-on-surface');
+            closeRegionPicker();
+        }
+
+        function recognizeAddress() {
+            const input = document.getElementById('smart-input').value.trim();
+            if (!input) return showToast('请输入识别内容');
+            
+            // Simulating a regex-based split for the demo
+            // In real app, this would be a more complex parser
+            const phoneMatch = input.match(/1[3-9]\d{9}/);
+            const phone = phoneMatch ? phoneMatch[0] : "";
+            
+            // Dummy logic: first word as name, rest as address
+            const words = input.replace(phone, "").split(/\s+/).filter(w => w.length > 0);
+            const name = words[0] || "";
+            const detail = words.slice(1).join(" ") || "";
+
+            if (name) document.getElementById('name-input').value = name;
+            if (phone) document.getElementById('phone-input').value = phone;
+            if (detail) {
+                // If it looks like it contains a city, we could auto-match region
+                // Here we just put everything into detail for simplicity
+                document.getElementById('detail-input').value = detail;
+            }
+            
+            showToast('识别完成');
+        }
+
+        function clearRecognition() {
+            document.getElementById('smart-input').value = "";
+        }
+
+        function handleSave() {
+            const name = document.getElementById('name-input').value;
+            if (!name) return showToast('请填写收货人姓名');
+
+            showToast('保存成功');
+            setTimeout(() => {
+                window.location.href = './address-list.html';
+            }, 1000);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.replace('opacity-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.replace('opacity-100', 'opacity-0');
+            }, 2000);
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('region-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('region-modal')) {
+                closeRegionPicker();
+            }
+        });
+    </script>
+<script src="../../assets/js/common.js"></script>
+</body></html>

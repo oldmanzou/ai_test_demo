@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>支付成功 - 陶瓷品牌商城</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f6f3f2",
+                      "surface-container": "#f0eded",
+                      "inverse-surface": "#303030",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-surface": "#1b1c1c",
+                      "inverse-primary": "#a5c8ff",
+                      "divider-gray": "#F0F0F0",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-white": "#FFFFFF",
+                      "primary-fixed-dim": "#a5c8ff",
+                      "outline": "#707785",
+                      "error": "#ba1a1a",
+                      "text-gray": "#8C8C8C",
+                      "surface-dim": "#dcd9d9",
+                      "success-green": "#52C41A",
+                      "primary": "#005daa",
+                      "on-background": "#1b1c1c",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdad7",
+                      "on-tertiary-fixed": "#410005",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c0c7d6",
+                      "on-primary-container": "#fefcff",
+                      "surface-tint": "#005fae",
+                      "on-secondary-fixed-variant": "#41474f",
+                      "tertiary-container": "#db3239",
+                      "secondary-container": "#dee3ed",
+                      "deep-blue": "#096DD9",
+                      "on-surface-variant": "#404753",
+                      "on-secondary-container": "#5f656d",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary-fixed-dim": "#ffb3ae",
+                      "secondary": "#595f67",
+                      "on-secondary-fixed": "#161c23",
+                      "background": "#fcf9f8",
+                      "secondary-fixed-dim": "#c1c7d0",
+                      "on-primary-fixed-variant": "#004785",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae7e7",
+                      "tertiary": "#b71423",
+                      "hover-blue": "#40A9FF",
+                      "on-tertiary-fixed-variant": "#930016",
+                      "surface": "#fcf9f8",
+                      "secondary-fixed": "#dee3ed",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#001c3a",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "warning-orange": "#FAAD14",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e2e1",
+                      "surface-bright": "#fcf9f8",
+                      "primary-fixed": "#d4e3ff",
+                      "primary-container": "#0075d5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "gutter": "12px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "unit": "8px",
+                      "md": "16px",
+                      "margin-mobile": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "price-display": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                      "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; }
+        .success-checkmark {
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Shell (Suppressed as per task requirement for Transactional Result page) -->
+<!-- The prompt mandates suppressing the nav if the page is Success/Confirmation -->
+<main class="min-h-screen flex flex-col items-center justify-center px-margin-mobile py-xl">
+<!-- Success Content Container -->
+<div class="w-full max-w-md bg-surface-white rounded-xl border border-divider-gray p-lg flex flex-col items-center text-center">
+<!-- Success Icon Animation -->
+<div class="mb-lg success-checkmark">
+<div class="w-20 h-20 rounded-full bg-success-green/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-success-green" style="font-variation-settings: 'FILL' 1;">
+                        check_circle
+                    </span>
+</div>
+</div>
+<!-- Success Text -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">支付成功</h1>
+<p class="font-body-md text-body-md text-text-gray mb-xl px-md">您的订单已处理成功。感谢您选择我们的陶瓷产品，我们将尽快为您安排发货。</p>
+<!-- Order Info Card -->
+<div class="w-full bg-surface-container-low rounded-lg p-md mb-xl space-y-md">
+<div class="flex justify-between items-center border-b border-divider-gray pb-sm">
+<span class="font-label-md text-label-md text-text-gray">订单金额</span>
+<span class="font-price-display text-price-display text-primary">¥ 3,280.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-text-gray">订单编号</span>
+<span class="font-body-md text-body-md text-on-surface">TILE-20231024-99</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-text-gray">支付方式</span>
+<span class="font-body-md text-body-md text-on-surface">在线支付</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-md">
+<button class="w-full h-[48px] bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center justify-center hover:bg-deep-blue transition-colors" onclick="location.href='../order/detail.html'">
+                    查看订单
+                </button>
+<button class="w-full h-[48px] bg-surface-white border border-primary text-primary font-label-md text-label-md rounded-lg flex items-center justify-center hover:bg-primary-container/10 transition-colors" onclick="location.href='../home/index.html'">
+                    回到首页
+                </button>
+</div>
+</div>
+<!-- Atmospheric Secondary Content -->
+<div class="mt-xl w-full max-w-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-lg text-center">为您推荐</h2>
+<!-- Lightweight Bento-ish Recommendation Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-white rounded-lg border border-divider-gray overflow-hidden cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional architectural photograph of high-end white marble floor tiles in a sun-drenched, minimalist living room. The lighting is soft and airy, highlighting the subtle gray veining of the stone. The overall aesthetic is clean and luxurious, perfectly matching a professional tile brand showroom feel. The composition uses wide angles to emphasize spatial clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvuSAn2ORwxbkzMbhfNjt5I6CChmkufGK9sJB0K3jwxgH-5iv0IBKpctTeqwuLx3V81gVlpwxmpNzuLCHaGPBPx--uA48G3ANxE9-4gNw1tDuQ2gPSiSu3X0OMYdLD_orBFF7Ec44feGXdxCTIzgmGwFYXX-fMrAT2qbSVk7Q30GEb1cfL1uS95UB4fR5SAaf0y6JN2Rb95o_VfD_qJxIvaFwn-_pAjVHUa-rZxl_tLPtgpGcv2_Rox3MF3MsYojddjQ_fWw8VLg"/>
+</div>
+<div class="p-sm">
+<p class="font-label-md text-label-md text-on-surface truncate">意大利丝绸系列瓷砖</p>
+<p class="font-label-sm text-label-sm text-primary mt-xs">¥ 298.00/㎡</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-white rounded-lg border border-divider-gray overflow-hidden cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of architectural dark slate tiles with a natural matte texture. The image features dramatic low-key lighting that creates deep shadows and highlights the geometric precision of the material. The color palette is composed of charcoal grays and deep blues, evoking a sense of structural integrity and modern luxury in a professional building context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVcRy3up3UFw2BQbDip-w4ayQtAjBbEEHLvHk_H0dLR21MZKgdZzPycYAMl9q4Lu73M1G3smV58sWFPdgAFd_AkF4WnVv3Bm8rvIjWzEpphTXliTryFRnvpaIY2Ocy6c_icmywp9FgCSBs6T_MT5xnV_C5ieEDTDgdlWbhMT2_Hoxxi_wWn91TYbkTYkinLTVvyXwn9lS-73-cySd16PmLAirFd0DiF47ynDuGnAuTapjL5qCWcA1bkUjzLzevwdY4phxI0omKsA"/>
+</div>
+<div class="p-sm">
+<p class="font-label-md text-label-md text-on-surface truncate">现代简约灰岩地砖</p>
+<p class="font-label-sm text-label-sm text-primary mt-xs">¥ 185.00/㎡</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Footer -->
+<div class="mt-xl flex items-center gap-xs opacity-50">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm">官方安全支付保障</span>
+</div>
+</main>
+<script src="../../assets/js/common.js"></script>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple fade-in sequence for items
+        window.addEventListener('load', () => {
+            const container = document.querySelector('.max-w-md');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.6s ease-out';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>装修案例详情 - 瓷砖品牌商城</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#161c23",
+                    "divider-gray": "#F0F0F0",
+                    "warning-orange": "#FAAD14",
+                    "surface-container-highest": "#e4e2e1",
+                    "inverse-surface": "#303030",
+                    "secondary-container": "#dee3ed",
+                    "on-primary": "#ffffff",
+                    "deep-blue": "#096DD9",
+                    "on-secondary-container": "#5f656d",
+                    "on-primary-fixed-variant": "#004785",
+                    "surface-variant": "#e4e2e1",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "success-green": "#52C41A",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "outline": "#707785",
+                    "primary-fixed": "#d4e3ff",
+                    "on-background": "#1b1c1c",
+                    "tertiary": "#b71423",
+                    "inverse-primary": "#a5c8ff",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#404753",
+                    "outline-variant": "#c0c7d6",
+                    "surface": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-dim": "#dcd9d9",
+                    "surface-bright": "#fcf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-white": "#FFFFFF",
+                    "text-gray": "#8C8C8C",
+                    "on-surface": "#1b1c1c",
+                    "surface-container-high": "#eae7e7",
+                    "surface-tint": "#005fae",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "on-tertiary-container": "#fffbff",
+                    "primary": "#005daa",
+                    "secondary": "#595f67",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "secondary-fixed": "#dee3ed",
+                    "on-primary-container": "#fefcff",
+                    "surface-container-lowest": "#ffffff",
+                    "hover-blue": "#40A9FF",
+                    "tertiary-container": "#db3239",
+                    "secondary-fixed-dim": "#c1c7d0",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#410005",
+                    "on-primary-fixed": "#001c3a",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary-container": "#0075d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "12px",
+                    "unit": "8px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "price-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #F0F5FF; /* Ultra Light Blue from Style Guidance */
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- Top Navigation (Shared Component Integration) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 glass-header border-b border-divider-gray">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary p-2 active:opacity-60 transition-opacity">arrow_back</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">案例详情</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary p-2">share</button>
+<button class="material-symbols-outlined text-primary p-2">search</button>
+</div>
+</header>
+<main class="pt-14 pb-24">
+<!-- Hero Section: Immersive Visuals -->
+<section class="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden">
+<img alt="Luxury Modern Living Room" class="w-full h-full object-cover" data-alt="A cinematic, high-angle photograph of a spacious modern living room featuring expansive grey marble porcelain tiles with delicate white veining. The room is flooded with natural sunlight from floor-to-ceiling windows, creating soft reflections on the polished floor. Minimalist furniture in cream and charcoal tones complements the architectural precision. The overall aesthetic is professional, clean, and high-end, utilizing a sky blue and white color palette for a serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_A0MxU5yeUoPfSO6i8kycgVHeU4y0YRNzKdLxOFhy9cEnAXWom-O8anrRJIFL_gaxg4gu9Sk8WX_cpwsTx6WDRryoFRPC1U6L_bxOcPV5MX_pEdD3X7g9QuN9lCvhKqSYbPBzod4qQFDuDPXEehCvgD-KDlVvGUyAoyuqkQjbV6BaRPo3zah9Fv2eBJDkWx3BQpoV3WNO_8-jU7GJMWUTlAiCvDh3DvgFF0iv5jLt2Knn8Q2LmJmNegZqdiBnU0UyEz_4WcPfaw"/>
+<div class="absolute bottom-0 left-0 w-full p-margin-mobile bg-gradient-to-t from-black/60 to-transparent">
+<span class="inline-block px-2 py-1 bg-primary text-on-primary font-label-sm text-label-sm rounded-sm mb-2">现代简约</span>
+<h2 class="text-white font-headline-lg text-headline-lg-mobile font-bold">莫兰迪灰：流动的艺术空间</h2>
+</div>
+</section>
+<!-- Case Description -->
+<section class="px-margin-mobile py-lg bg-surface-white">
+<div class="flex items-center gap-2 mb-sm text-text-gray">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="font-body-sm text-body-sm">上海 · 滨江壹号院</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                本案以“静谧”为核心，全屋地面铺设 900x1800mm 大板大理石瓷砖，通过无缝铺贴工艺，营造出地面如整块石材般的延展感。客厅背景墙选用同色系岩板，配合隐藏式灯带，将光影与瓷砖肌理完美融合。
+            </p>
+<div class="flex gap-lg mt-md">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">140㎡</p>
+<p class="font-label-sm text-label-sm text-text-gray">施工面积</p>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">12天</p>
+<p class="font-label-sm text-label-sm text-text-gray">铺贴周期</p>
+</div>
+</div>
+</section>
+<!-- Tiles Used - Products List -->
+<section class="mt-unit bg-surface-white p-margin-mobile">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">案例所用产品</h3>
+<span class="font-label-sm text-label-sm text-primary">共3款产品</span>
+</div>
+<div class="space-y-gutter">
+<!-- Product Card 1 -->
+<div class="flex gap-md border border-divider-gray p-sm rounded-lg hover:bg-surface-container-low transition-colors duration-200">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container rounded overflow-hidden">
+<img alt="Gray Marble Tile" class="w-full h-full object-cover" data-alt="Close-up shot of a single high-definition porcelain tile with a sophisticated light gray marble pattern. The texture is smooth and polished with intricate white and charcoal veins running across the surface. The lighting is studio-quality, emphasizing the reflective finish and the technical precision of the tile edges. The image adheres to a minimalist gallery aesthetic with a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ2DFsgvomytoVU2-bUR0YoinFvdZclyaFJh385M_YhbDcGKLsJT6H68I2SRB0ZbNWchaZgaTVNbVmIy9HrzgOpnyBaf4q756fDymlZgOYbMRKcNTy8sCqLRPh6eLfKPUqES5hn0EXv14_AxLDtinYBBBO7_eaQFs80_Cm5E2W_C85mZz5YLng2pxt7zl19UTrhng_wJZDbDaEWk96KqI9YkaONpoZK7MCOOvqDSJc-Cz8Wg5ErK8ngmbstcit6iEoYF6QxeZwTA"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-on-surface truncate">阿尔卑斯浅灰 · 柔光大板</h4>
+<p class="font-body-sm text-body-sm text-text-gray">规格：900x1800mm</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-primary">¥298<small class="text-body-sm font-normal">/㎡</small></span>
+<button class="px-3 py-1.5 border border-primary text-primary font-label-md text-label-md rounded-full active:opacity-60 transition-all">
+                                查看详情
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex gap-md border border-divider-gray p-sm rounded-lg hover:bg-surface-container-low transition-colors duration-200">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container rounded overflow-hidden">
+<img alt="White Textured Tile" class="w-full h-full object-cover" data-alt="A premium porcelain tile featuring a subtle matte white texture with delicate linear patterns reminiscent of fine linen. The image is captured in a minimalist studio setting with soft side-lighting that reveals the three-dimensional quality of the surface. The aesthetic is extremely clean, professional, and architectural, fitting for a high-end interior design catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDc-oTSthEhTR5m4VJjVV-gWQLj09gTmNp3_EElCxl0HdWTh-quxhYOsfO_ZAlPm0XnTYI0XAp8BaUOABaYUPyJt6sYWrzUFe8acfjK4e5Ug5zp-mqwM7qryLBAXnFpx1FTXOveHHqCsBJddEt4lfB16jMgsRQAjE2Aa7XtEpUmQkqeNhL-yr8JnECkfS6xh_hPhQbL3FITF6j-cDYRRrgj0wMdRhED5B1aGDMvjH_mr-pZwL1u56CJhMv_70x1GcONW3q8oZTLQ"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-on-surface truncate">珍珠白线纹 · 厨卫专用</h4>
+<p class="font-body-sm text-body-sm text-text-gray">规格：300x600mm</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-primary">¥85<small class="text-body-sm font-normal">/片</small></span>
+<button class="px-3 py-1.5 border border-primary text-primary font-label-md text-label-md rounded-full active:opacity-60 transition-all">
+                                查看详情
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Same Style Recommendations (Bento Style) -->
+<section class="mt-unit px-margin-mobile py-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-md">同款风格推荐</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Bento Item 1 -->
+<div class="col-span-1 bg-surface-white rounded-lg overflow-hidden border border-divider-gray group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Living room tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A modern kitchen floor showcasing dark charcoal porcelain tiles in a large format. The lighting is crisp and bright, creating a clean architectural feel. The room features white cabinetry and stainless steel appliances that reflect on the tile surface. The overall mood is sophisticated and masculine, emphasizing spatial clarity and high-quality construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY495YsF1Ed2O-pRmRcOJk2mpn3uBCGnUG2bRPo4DCNsJf5jXTYfYNvikXXsxnsVRscBMQU46cFFyUGhbXoFA9WpNfq7zX5EUCjowlLj3AdcfMptBO9NQQdoswVHRmVF97RJiZXpIsUHiVdbstLY71VM_RS77f3P0oEelTSoeeQm6vSWyyk6UTg38RDRd1epujoqHWmmjMiylYU9pLIiJXyLbgIDlYBl6-cW_3NmezlmLe499YDa9RGd1jjVIZI3hTYzdNUp7h9g"/>
+</div>
+<div class="p-sm">
+<h5 class="font-body-sm text-body-sm font-bold truncate">静谧工业风案例</h5>
+<p class="font-label-sm text-label-sm text-text-gray mt-xs">128人已收藏</p>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="col-span-1 bg-surface-white rounded-lg overflow-hidden border border-divider-gray group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Luxury bathroom" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An elegant bathroom interior with floor-to-ceiling cream-colored tiles that have a subtle stone texture. The space includes a free-standing white bathtub and minimal matte black fixtures. Soft, diffused lighting enhances the warm, serene ambiance. The photography is professional and focuses on the seamless transition between the wall and floor tiles, presenting a spa-like gallery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEIufo6AXLPmMDtQPYE-LX0icbc3qjFZJ9Z1nHs-Awl0qIyKKj5FV56WAGJFe3YOzMVBOR5NBJ4PxoR8SHuz1UGL8TiMmpNxVitu2ijK8_pxOSRC4aS9KHW2gSdycJOhWTDuAgfBpEzrxCFQ4-JTsusMuKHvUVSGoCTtlJawyvuJhJOjW0IGCFdWPLX96bX8YcRHaHhyavqo_iQyQyHttazunfFTJi6KmgDKdvzvqayNhSDCSewvXBxubp41J68x3sgVBauMrQpg"/>
+</div>
+<div class="p-sm">
+<h5 class="font-body-sm text-body-sm font-bold truncate">轻奢奶油风空间</h5>
+<p class="font-label-sm text-label-sm text-text-gray mt-xs">342人已收藏</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-white border-t border-divider-gray pb-safe">
+<div class="flex items-center justify-between px-margin-mobile h-16 gap-md">
+<div class="flex gap-4">
+<button class="flex flex-col items-center">
+<span class="material-symbols-outlined text-on-surface-variant">favorite</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">收藏</span>
+</button>
+<button class="flex flex-col items-center">
+<span class="material-symbols-outlined text-on-surface-variant">comment</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">咨询</span>
+</button>
+</div>
+<div class="flex-grow flex gap-sm">
+<button class="flex-1 bg-white border border-primary text-primary font-label-md text-label-md py-3 rounded-lg font-bold active:bg-primary-container transition-colors">
+                    联系设计师
+                </button>
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg font-bold shadow-lg shadow-primary/20 active:bg-deep-blue transition-colors">
+                    预约上门测绘
+                </button>
+</div>
+</div>
+</footer>
+<!-- Back to Top Micro-interaction -->
+<button class="fixed bottom-20 right-4 w-12 h-12 bg-white rounded-full shadow-lg border border-divider-gray flex items-center justify-center text-primary opacity-0 translate-y-10 transition-all duration-300 z-40 pointer-events-none" id="back-to-top">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+<script>
+        // Scroll interaction for the back-to-top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Hover effect for product cards
+        document.querySelectorAll('.group').forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.querySelector('img').style.transform = 'scale(1.1)';
+            });
+            el.addEventListener('touchend', () => {
+                el.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>LUXE TILES - 选择您的身份</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .role-card-selected {
+            border-color: #1890FF !important;
+            background-color: #F0F5FF !important;
+        }
+        .role-card-selected .icon-container {
+            background-color: #005daa !important;
+            color: #ffffff !important;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "inverse-surface": "#303030",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-surface": "#1b1c1c",
+                    "inverse-primary": "#a5c8ff",
+                    "divider-gray": "#F0F0F0",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-white": "#FFFFFF",
+                    "primary-fixed-dim": "#a5c8ff",
+                    "outline": "#707785",
+                    "error": "#ba1a1a",
+                    "text-gray": "#8C8C8C",
+                    "surface-dim": "#dcd9d9",
+                    "success-green": "#52C41A",
+                    "primary": "#005daa",
+                    "on-background": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-tertiary-fixed": "#410005",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c0c7d6",
+                    "on-primary-container": "#fefcff",
+                    "surface-tint": "#005fae",
+                    "on-secondary-fixed-variant": "#41474f",
+                    "tertiary-container": "#db3239",
+                    "secondary-container": "#dee3ed",
+                    "deep-blue": "#096DD9",
+                    "on-surface-variant": "#404753",
+                    "on-secondary-container": "#5f656d",
+                    "inverse-on-surface": "#f3f0ef",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "secondary": "#595f67",
+                    "on-secondary-fixed": "#161c23",
+                    "background": "#fcf9f8",
+                    "secondary-fixed-dim": "#c1c7d0",
+                    "on-primary-fixed-variant": "#004785",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary": "#b71423",
+                    "hover-blue": "#40A9FF",
+                    "on-tertiary-fixed-variant": "#930016",
+                    "surface": "#fcf9f8",
+                    "secondary-fixed": "#dee3ed",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001c3a",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "warning-orange": "#FAAD14",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e4e2e1",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed": "#d4e3ff",
+                    "primary-container": "#0075d5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "12px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "unit": "8px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "price-display": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                    "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#F0F5FF] min-h-screen flex flex-col font-body-md text-on-surface antialiased">
+<!-- Top AppBar (Identity Suppression Rule: Top-level branding) -->
+<header class="bg-surface-white w-full sticky top-0 z-50 border-b border-divider-gray flex justify-between items-center px-margin-mobile py-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 transition-opacity" data-icon="close">close</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-primary">LUXE TILES</h1>
+</div>
+<div class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-xl max-w-4xl mx-auto w-full">
+<!-- Section Header -->
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">选择您的身份</h2>
+<p class="font-body-md text-body-md text-text-gray">我们将根据您的需求，为您提供定制化的工具和报价。</p>
+</div>
+<!-- Vertical Cards Container (Bento/Asymmetric Inspiration) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg w-full mb-xl">
+<!-- Homeowner Card -->
+<button class="role-card group bg-surface-white border border-divider-gray rounded-xl p-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer relative overflow-hidden" onclick="selectRole(this)">
+<div class="icon-container w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-md transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="home">home</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">家装业主</h3>
+<p class="font-body-md text-body-md text-text-gray">正在装修您的爱家？查看装修灵感及零售报价。</p>
+<div class="absolute top-0 right-0 p-sm opacity-0 group-[.role-card-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Contractor Card -->
+<button class="role-card group bg-surface-white border border-divider-gray rounded-xl p-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer relative overflow-hidden" onclick="selectRole(this)">
+<div class="icon-container w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-md transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="build">build</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">装修工人/包工头</h3>
+<p class="font-body-md text-body-md text-text-gray">为他人施工？获取专业批发价、工期预测及项目管理工具。</p>
+<div class="absolute top-0 right-0 p-sm opacity-0 group-[.role-card-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Designer Card -->
+<button class="role-card group bg-surface-white border border-divider-gray rounded-xl p-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer relative overflow-hidden" onclick="selectRole(this)">
+<div class="icon-container w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-md transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="palette">palette</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">设计师</h3>
+<p class="font-body-md text-body-md text-text-gray">进行空间设计？获取 CAD 文件、独家纹理包及专业室内设计支持。</p>
+<div class="absolute top-0 right-0 p-sm opacity-0 group-[.role-card-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+</div>
+<!-- Decorative Context Image (Architectural Space) -->
+<div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-xl border border-divider-gray">
+<img alt="现代建筑室内设计" class="w-full h-full object-cover grayscale opacity-40" data-alt="A wide-angle shot of a minimalist, high-end bathroom featuring large-format porcelain tiles in soft grey. The lighting is crisp and architectural, emphasizing the geometric precision of the space. Natural light floods in from a high window, casting soft shadows on a freestanding matte white bathtub. The aesthetic is clean, professional, and sophisticated, aligning with the luxury tile brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClqmRfzeVag73KqCnwR-3S6abwwiEAWSo7MUGpvyZ7SJoKOWY8j8CjHuWVCY3f3wbqWEl_ueJfu_fGwBa5qChUr7XXtA2Or54FgY1aZqCC9-njppheHb0bBVfwjWd-Au_ma3XwhZiQriNz47-_P-HqSCPkYze58rXDhx0w8xLbNUb35y-INHWAai8ppHcTsnm5sOtl95sbBSZ5_DYlco2T89WOJtXWMCB68_yLujgM-MLWIyioHKdWhLMrlNkSh4irWGzuiD3eSw"/>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<footer class="bg-surface-white fixed bottom-0 w-full z-50 pb-safe border-t border-divider-gray">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile py-md max-w-4xl mx-auto gap-md">
+<p class="font-body-sm text-body-sm text-text-gray hidden md:block">您可以稍后在个人设置中更改身份。</p>
+<button class="w-full md:w-auto px-xl h-12 bg-primary text-on-primary font-label-md text-label-md rounded-lg active:scale-95 transition-all opacity-50 cursor-not-allowed" disabled="" id="confirmBtn">
+                确认选择
+            </button>
+</div>
+</footer>
+<script>
+        function selectRole(element) {
+            // Remove selection from all cards
+            const cards = document.querySelectorAll('.role-card');
+            cards.forEach(card => card.classList.remove('role-card-selected'));
+            
+            // Add selection to clicked card
+            element.classList.add('role-card-selected');
+            
+            // Enable confirm button
+            const confirmBtn = document.getElementById('confirmBtn');
+            confirmBtn.disabled = false;
+            confirmBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            confirmBtn.classList.add('hover:bg-deep-blue', 'shadow-md');
+        }
+
+        // Click handler for confirmation
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            if(!this.disabled) {
+                // Visual feedback
+                this.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+                setTimeout(() => {
+                    alert('身份已确认！正在为您跳转至个性化的 Luxe Tiles 体验。');
+                }, 800);
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html><html class="light" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>瓷砖品牌商城</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-container": "#dee3ed",
+                "on-secondary-fixed-variant": "#41474f",
+                "error": "#ba1a1a",
+                "on-background": "#1b1c1c",
+                "deep-blue": "#096DD9",
+                "surface-container-low": "#f6f3f2",
+                "primary-fixed": "#d4e3ff",
+                "surface-container-highest": "#e4e2e1",
+                "error-container": "#ffdad6",
+                "tertiary-fixed": "#ffdad7",
+                "surface-white": "#FFFFFF",
+                "tertiary-container": "#db3239",
+                "on-secondary-container": "#5f656d",
+                "on-surface": "#1b1c1c",
+                "on-secondary": "#ffffff",
+                "surface": "#fcf9f8",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#595f67",
+                "inverse-on-surface": "#f3f0ef",
+                "hover-blue": "#40A9FF",
+                "on-error-container": "#93000a",
+                "success-green": "#52C41A",
+                "primary": "#005daa",
+                "on-tertiary": "#ffffff",
+                "divider-gray": "#F0F0F0",
+                "on-tertiary-fixed": "#410005",
+                "primary-container": "#0075d5",
+                "outline-variant": "#c0c7d6",
+                "surface-container": "#f0eded",
+                "background": "#fcf9f8",
+                "on-primary-fixed": "#001c3a",
+                "secondary-fixed": "#dee3ed",
+                "surface-dim": "#dcd9d9",
+                "on-tertiary-fixed-variant": "#930016",
+                "warning-orange": "#FAAD14",
+                "on-surface-variant": "#404753",
+                "tertiary": "#b71423",
+                "on-primary-container": "#fefcff",
+                "secondary-fixed-dim": "#c1c7d0",
+                "on-tertiary-container": "#fffbff",
+                "surface-container-high": "#eae7e7",
+                "surface-bright": "#fcf9f8",
+                "on-error": "#ffffff",
+                "inverse-surface": "#303030",
+                "outline": "#707785",
+                "on-secondary-fixed": "#161c23",
+                "primary-fixed-dim": "#a5c8ff",
+                "surface-tint": "#005fae",
+                "surface-variant": "#e4e2e1",
+                "on-primary-fixed-variant": "#004785",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#a5c8ff",
+                "tertiary-fixed-dim": "#ffb3ae",
+                "text-gray": "#8C8C8C"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "lg": "24px",
+                "sm": "8px",
+                "gutter": "12px",
+                "md": "16px",
+                "unit": "8px",
+                "xs": "4px",
+                "xl": "32px"
+            },
+            "fontFamily": {
+                "price-display": ["Inter"],
+                "body-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"]
+            },
+            "fontSize": {
+                "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .banner-mask {
+            background: linear-gradient(to bottom, rgba(252, 249, 248, 0.4), transparent 20%, transparent 80%, rgba(252, 249, 248, 1));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface border-b border-divider-gray transition-colors duration-200 ease-in-out">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">瓷砖品牌商城</h1>
+</div>
+<div class="flex items-center gap-sm">
+
+</div>
+</header>
+<!-- Search Box (Integrated with Shell) -->
+<div class="pt-14 px-margin-mobile mt-sm">
+<div class="relative w-full h-11 bg-surface-container-low rounded-lg border border-divider-gray flex items-center px-md">
+<span class="material-symbols-outlined text-outline mr-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full placeholder:text-text-gray" placeholder="搜索大理石、抛釉砖..." type="text">
+<span class="material-symbols-outlined text-outline" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<main class="pb-24">
+<!-- Banner Carousel -->
+<section class="mt-md relative overflow-hidden h-64 mx-margin-mobile rounded-xl">
+<div class="flex transition-transform duration-500 ease-out h-full" id="carousel" style="transform: translateX(-100%);">
+<div class="min-w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A high-end modern living room featuring expansive high-gloss Italian marble floor tiles with intricate grey veining. The scene is bathed in natural morning light streaming through large floor-to-ceiling windows, highlighting the polished surface's reflective quality. The interior is designed with a minimalist aesthetic, using a soft sky blue and white color palette to create a sense of airy sophistication and architectural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATEwWjAIi7tlmQ6WTIByM1KmrCmKA2WOa14548koE8YkzAaIiKNyInzDSgtGu_Owkhkn332TcC2EnrwVLwoim5xAAYqA0pSEwE2kYzc3g7McLf4KUpy6KLyD-qzKbZs_s6eY3oXtXXjHUo2pWo06om-6AFsErA3d_-Cu0MHWFcbMF3cj5pW6Y6glkv2HGYTpyuu0zCZ8sGuiHyLLUw6jg5mB2D4ztjRFbjv2RFMmGijToWcE4SabhHytqLgVLOFIhcHOCn6bnHhg">
+<div class="absolute bottom-md left-md text-white z-10">
+<span class="bg-primary px-sm py-xs text-label-sm rounded-sm mb-xs inline-block">新品上市</span>
+<h2 class="font-headline-sm text-headline-sm">意式卡拉拉白 · 柔光系列</h2>
+</div>
+</div>
+<div class="min-w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A luxury hotel bathroom showcasing large format dark grey slate-textured porcelain wall tiles. The lighting is focused and warm, creating dramatic shadows and emphasizing the tactile, geometric surface of the tiles. The overall mood is professional and premium, with high-quality fixtures in brushed nickel. The aesthetic follows a strict architectural alignment, reflecting cleanliness and structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2YbKKVZbQG7_Ae4YmCC1ogXycaIhGEUe1CLCAVFNpBP59LGlLE_LUJ3odUddHY1Y5g0OAdv9pmOKrXFAYpqgXBjUA8IYZOTAfxnsj-ZHrD7ffplcW_wZPL4apIHBtpggObPcq6kW0XRUnuYj8NaML7F1UQuGWjAYpm94fmNLDPRNaN9hDbM0Hpo3Dbvnaelxr1VoSDIxe1jzUF1Ngpd_hw5jXH3tSjzVCJ8iZmOQ6Xzl2EcfMr-Rvv1gcLP64puo7LyRa9oejg">
+<div class="absolute bottom-md left-md text-white z-10">
+<span class="bg-primary px-sm py-xs text-label-sm rounded-sm mb-xs inline-block">人气之选</span>
+<h2 class="font-headline-sm text-headline-sm">天山灰哑光 · 现代简约</h2>
+</div>
+</div>
+</div>
+<!-- Indicators -->
+<div class="absolute bottom-sm right-md flex gap-xs">
+<div class="w-2 h-2 rounded-full bg-white opacity-100" style="opacity: 0.4;"></div>
+<div class="w-2 h-2 rounded-full bg-white opacity-40" style="opacity: 1;"></div>
+</div>
+</section>
+<!-- Category Grid (Jingang-qu) -->
+<section class="mt-xl px-margin-mobile">
+<div class="grid grid-cols-4 gap-gutter text-center">
+<button class="flex flex-col items-center gap-xs active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="house">house</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">按空间</span>
+</button>
+<button class="flex flex-col items-center gap-xs active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="palette">palette</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">按风格</span>
+</button>
+<button class="flex flex-col items-center gap-xs active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="grid_view">grid_view</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">按类型</span>
+</button>
+<button class="flex flex-col items-center gap-xs active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="color_lens">color_lens</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">按颜色</span>
+</button>
+</div>
+</section>
+<!-- Featured Products (Waterfall) -->
+<section class="mt-xl px-margin-mobile">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-background">推荐产品</h3>
+<span class="text-label-md text-primary font-bold">查看全部</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group transition-all duration-200 hover:shadow-lg">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro close-up of a premium porcelain tile showing ultra-realistic wood grain texture in a warm oak finish. The lighting is soft and directional, highlighting the subtle indentations and tactile surface details. The image conveys a sense of high-end craftsmanship and technical precision. The background is a clean white showroom environment, emphasizing the product's natural look and professional quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv_k1xJWZ0YOWZeQ8IErRKF43LYUv7J_SaeymFyC7Iq53GlGyUWLMoyRHNK1hrDVhZwjItYrl6ARcWOixWmOR0WYqaVo_MgD0CjeovnvOjfRYfhgcJf7cItNuvMXisScOlvvB98IIJDuVZCaFW3RZiA1peziMy3zaMNSt6flMLXcUUC8Mt-9m3Y2Mt2nRF76vjm2nAaQ6kd1HIsZQqSQ8iIYqQwoXFgMtb1DSQ0RuP0bS8YbI0grzIbmBeJ27Tmo50mTeq9kLqcQ">
+<div class="absolute top-sm right-sm">
+<span class="bg-success-green/10 text-success-green px-sm py-0.5 rounded-full text-label-sm font-bold">现货</span>
+</div>
+</div>
+<div class="p-sm flex flex-col gap-xs">
+<p class="font-label-sm text-label-sm text-text-gray">MARBLE-8001</p>
+<h4 class="font-body-md text-body-md text-on-surface line-clamp-1">云锦白·全抛釉大理石瓷砖</h4>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="font-price-display text-price-display text-tertiary">¥128.00</span>
+<span class="text-body-sm text-text-gray line-through">/m²</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group transition-all duration-200 hover:shadow-lg">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional architectural product shot of a grey terrazzo floor tile against a pristine white backdrop. The tile features a dense mix of large and small aggregate particles in varying shades of grey and black. High-key gallery lighting creates a bright, modern aesthetic, showcasing the even distribution and high-quality finish. The scene reflects a minimalist, professional design approach suitable for high-end retail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlAsHOTpcdv2VO4vm4LNqhFrJs5gILXueSN1_vLorMZ9yhXvZl-OUL-DHITHDGEqggCqqn1AxVVKgYlO0RIlg11NQZgWC37uGBElBYh0uTmEaYXSmqYzc7jZiFEKcmTi998euIUU3cJPnpUKfiaPy_5hePhNWqPPnTVK7WD7byob7Jn7GSpRQbK4WVGZVT471XAM-2Awv9-BFNQ4RDX7iXKjH0js78gKu0rBYnT7STyhnweeHP7JQk8XY-VakfQi0pI8-SnW3zqg">
+<div class="absolute top-sm left-sm">
+<span class="bg-warning-orange/10 text-warning-orange px-sm py-0.5 rounded-full text-label-sm font-bold">热卖</span>
+</div>
+</div>
+<div class="p-sm flex flex-col gap-xs">
+<p class="font-label-sm text-label-sm text-text-gray">TZ-2024</p>
+<h4 class="font-body-md text-body-md text-on-surface line-clamp-1">莫兰迪灰·复古水磨石</h4>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="font-price-display text-price-display text-tertiary">¥89.50</span>
+<span class="text-body-sm text-text-gray line-through">/m²</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group transition-all duration-200 hover:shadow-lg">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed view of luxury wall tiles with a 3D geometric relief pattern in a soft cream finish. The lighting creates subtle highlights and shadows on the faceted surfaces, suggesting an architectural and structural depth. The overall aesthetic is clean, minimalist, and high-end, perfect for a designer showroom. The color palette is composed of warm neutrals and soft whites, evoking a calm and professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjVzOS5NLfGHdUkaBhQkc7fQ4iSare3HR1U7IPLPOvgUN-bxwj5R9DTuECo8I3sQiaV6P8qFQFnPK8s6ydIkrU45HpMtuW0mPdMEUIZafceJ0hjdWg9f3A3iqPNMzMh_4aG6MPk9AMjA-u8Kg6s2JZL7xToSOUmegW3kXsqj5umYF-cfjtaVZfhspc33PO-Ay3zLY62m5FKcoPIUnNaIZx-pfTv4V4YXXpD97GiejXZF1ALHwscJj-qEtjxl0uKZvz1jhtTkrJNg">
+</div>
+<div class="p-sm flex flex-col gap-xs">
+<p class="font-label-sm text-label-sm text-text-gray">WOOD-1260</p>
+<h4 class="font-body-md text-body-md text-on-surface line-clamp-1">橡木纹理·生态木纹砖</h4>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="font-price-display text-price-display text-tertiary">¥156.00</span>
+<span class="text-body-sm text-text-gray line-through">/m²</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group transition-all duration-200 hover:shadow-lg">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated kitchen backsplash scene featuring small, glossy sage green subway tiles arranged in a herringbone pattern. The surface is highly reflective, catching the soft under-cabinet LED lighting that highlights the precision of the installation. The professional setting is modern and minimalist, utilizing a clean, structural grid. The mood is tranquil and premium, emphasizing high-quality materials and design integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeG0f03HZkCC5iZQUgq1Xv0SvNNr4wp_6W5fV5RWJkJL-MTpO0gP4KF5VEuuZlKLX2XbQSLWGOYQXBC3C2zNWjiUZw2OSEKcSifxXYlMfDAeg2rmD09EjbTWv-mJxpDcNjkKR_Mba6tbXs6ASgk_7svqtsM3QfrJdqOQ6bXw4LAM8QRtbuHwa3qbiYWhdVi8famovCRBvoguKFjPFI2ccRDGojT9LYcQvDGltxLVmL6A01JO9YFECqu76MKVCEdWR_1-01niY1Lg">
+</div>
+<div class="p-sm flex flex-col gap-xs">
+<p class="font-label-sm text-label-sm text-text-gray">ROCK-9005</p>
+<h4 class="font-body-md text-body-md text-on-surface line-clamp-1">玄武岩灰·户外防滑砖</h4>
+<div class="mt-xs flex items-baseline gap-xs">
+<span class="font-price-display text-price-display text-tertiary">¥75.00</span>
+<span class="text-body-sm text-text-gray line-through">/m²</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-sm bg-surface-white pb-safe border-t border-divider-gray shadow-lg rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a><a class="flex flex-col items-center justify-center text-text-gray active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+
+<a class="flex flex-col items-center justify-center text-text-gray active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray active:opacity-80 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</a>
+</nav>
+<script>
+        // Simple Carousel Logic
+        const carousel = document.getElementById('carousel');
+        let index = 0;
+        const totalItems = 2;
+
+        setInterval(() => {
+            index = (index + 1) % totalItems;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update indicators
+            const indicators = document.querySelectorAll('#carousel + div > div');
+            indicators.forEach((ind, i) => {
+                ind.style.opacity = i === index ? '1' : '0.4';
+            });
+        }, 5000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+</body></html>

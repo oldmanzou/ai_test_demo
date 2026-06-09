@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>确认订单 - 瓷砖品牌商城</title>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f6f3f2",
+                      "surface-container": "#f0eded",
+                      "inverse-surface": "#303030",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-surface": "#1b1c1c",
+                      "inverse-primary": "#a5c8ff",
+                      "divider-gray": "#F0F0F0",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-white": "#FFFFFF",
+                      "primary-fixed-dim": "#a5c8ff",
+                      "outline": "#707785",
+                      "error": "#ba1a1a",
+                      "text-gray": "#8C8C8C",
+                      "surface-dim": "#dcd9d9",
+                      "success-green": "#52C41A",
+                      "primary": "#005daa",
+                      "on-background": "#1b1c1c",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdad7",
+                      "on-tertiary-fixed": "#410005",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c0c7d6",
+                      "on-primary-container": "#fefcff",
+                      "surface-tint": "#005fae",
+                      "on-secondary-fixed-variant": "#41474f",
+                      "tertiary-container": "#db3239",
+                      "secondary-container": "#dee3ed",
+                      "deep-blue": "#096DD9",
+                      "on-surface-variant": "#404753",
+                      "on-secondary-container": "#5f656d",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary-fixed-dim": "#ffb3ae",
+                      "secondary": "#595f67",
+                      "on-secondary-fixed": "#161c23",
+                      "background": "#fcf9f8",
+                      "secondary-fixed-dim": "#c1c7d0",
+                      "on-primary-fixed-variant": "#004785",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae7e7",
+                      "tertiary": "#b71423",
+                      "hover-blue": "#40A9FF",
+                      "on-tertiary-fixed-variant": "#930016",
+                      "surface": "#fcf9f8",
+                      "secondary-fixed": "#dee3ed",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#001c3a",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "warning-orange": "#FAAD14",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e2e1",
+                      "surface-bright": "#fcf9f8",
+                      "primary-fixed": "#d4e3ff",
+                      "primary-container": "#0075d5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "gutter": "12px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "unit": "8px",
+                      "md": "16px",
+                      "margin-mobile": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "price-display": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                      "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #F0F5FF; /* As per Style Guidance: Ultra Light Blue */
+            font-family: 'Inter', sans-serif;
+            color: #1b1c1c;
+        }
+      </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface dark:bg-on-background border-b border-divider-gray dark:border-on-secondary-fixed-variant transition-colors duration-200 ease-in-out">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors" onclick="location.href='../cart/cart.html'">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">确认订单</h1>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 mt-14 pb-32 max-w-4xl mx-auto w-full px-margin-mobile pt-lg">
+<!-- Delivery Address Section -->
+<section class="mb-lg">
+<div class="bg-surface-white rounded-xl border border-divider-gray p-md flex items-start gap-md group cursor-pointer hover:border-primary transition-all duration-300">
+<div class="bg-primary-fixed w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">张建设</span>
+<span class="font-body-md text-body-md text-text-gray">138 **** 8888</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        广东省佛山市禅城区南庄镇华夏陶瓷博览城 A 区 102 号 商务中心二楼
+                    </p>
+</div>
+<button class="self-center p-sm text-primary font-label-md text-label-md hover:bg-surface-container-low rounded-lg transition-colors" onclick="location.href='../user/address-list.html'">
+                    修改
+                </button>
+</div>
+</section>
+<!-- Product List Section -->
+<section class="mb-lg space-y-gutter">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-sm px-xs">订单商品 (2)</h2>
+<!-- Item 1 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray p-md flex gap-md cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 border border-divider-gray">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of a high-end porcelain tile featuring elegant grey marble veining with a polished reflective finish. The lighting is soft and architectural, highlighting the smooth texture and depth of the ceramic material. The aesthetic is modern and professional, aligning with a luxury interior showroom style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBshV87qsdPHPSIADK2CCVL0VezX67cmQ3HmV2iAyRlWfPyR8h8E4eMuOj92HE9sURqf6BPl74-DI_F6vQfq-Z7eX3ttyuBbmSkGbtrNqNhLJHf6m0NGspuk6rP5iJyzYnWDRO-cH9y3Gz7ZJ5wmlLSlrkQmcIY3noNoWcnmCyiCfkCTzQcBPtbusl959j_0HLBnxQpbEWBR8XKm5NcWYTBukDcSi0oOGtO53CPP__kqbubYRyfWaUK6uyk0Lv8F8q_iZChgSTd9A"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">云海系列 · 大理石瓷砖</h3>
+<p class="font-body-sm text-body-sm text-text-gray mt-xs">规格：800×800mm | 质地：柔光面</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-primary">¥ 128.00 <span class="text-body-sm font-normal text-text-gray">/ 片</span></span>
+<span class="font-body-md text-body-md text-on-surface">x 45</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-white rounded-xl border border-divider-gray p-md flex gap-md cursor-pointer" onclick="location.href='../product/detail.html'">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 border border-divider-gray">
+<img class="w-full h-full object-cover" data-alt="Detailed view of a contemporary architectural slate tile in a deep charcoal grey with a natural matte texture. The scene is shot with high-key lighting to emphasize the geometric precision and clean edges of the tile. The mood is industrial yet sophisticated, evoking a sense of high-quality craftsmanship and structural integrity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXWKap1KdkzfXsRL51PpMyVSgKhdIsG3lRrhuZpHBMRAqkKyfugbShCchiMgPqe2dofXRRmWwgaP084Cek8DtMVowJYU3wnlzfvZJiO50j9ipW6FbyG1vIRnvSJ9dfJe6eg0DuK_AGKFt0bVwVIV9vRkuGwEG9VcWjF4MbKTmGS_iNc3WWvQdB7zSkhfEFLbpY51l8lEJig_eXevzgsKs89rSgMVEApGyEoFq31mFEnZMZEg_Fb1ptBMsJxvP2v4Zu5qtUdUUAzA"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">墨岩系列 · 防滑通体砖</h3>
+<p class="font-body-sm text-body-sm text-text-gray mt-xs">规格：600×1200mm | 质地：微水泥</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-primary">¥ 215.00 <span class="text-body-sm font-normal text-text-gray">/ 片</span></span>
+<span class="font-body-md text-body-md text-on-surface">x 20</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Remarks Section -->
+<section class="mb-lg">
+<div class="bg-surface-white rounded-xl border border-divider-gray p-md">
+<label class="block font-label-md text-label-md text-on-surface mb-sm" for="remarks">买家备注</label>
+<textarea class="w-full border-divider-gray rounded-lg focus:border-primary focus:ring-1 focus:ring-primary-fixed bg-surface text-body-md transition-all duration-200 placeholder:text-outline" id="remarks" placeholder="如有特殊装卸需求或送货时间要求，请在此填写..." rows="2"></textarea>
+</div>
+</section>
+<!-- Summary Section -->
+<section class="mb-lg">
+<div class="bg-surface-white rounded-xl border border-divider-gray p-md space-y-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-text-gray">商品总计</span>
+<span class="font-body-md text-body-md text-on-surface">¥ 10,060.00</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="font-body-md text-body-md text-text-gray">物流费用</span>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="info" title="大宗瓷砖物流需线下核算">info</span>
+</div>
+<span class="font-body-md text-body-md text-warning-orange">线下协商</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-text-gray">优惠金额</span>
+<span class="font-body-md text-body-md text-success-green">- ¥ 0.00</span>
+</div>
+<div class="pt-md border-t border-divider-gray flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-on-surface">预估应付</span>
+<span class="font-headline-lg text-headline-lg text-primary">¥ 10,060.00</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Footer CTA -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-white border-t border-divider-gray shadow-lg safe-pb">
+<div class="max-w-4xl mx-auto px-margin-mobile h-20 flex justify-between items-center gap-md">
+<div class="flex flex-col">
+<span class="text-body-sm text-text-gray">合计应付</span>
+<span class="font-price-display text-price-display text-primary">¥ 10,060.00</span>
+</div>
+<button class="bg-primary hover:bg-deep-blue text-on-primary font-label-md text-label-md px-10 h-12 rounded-full flex items-center justify-center transition-all duration-300 active:scale-95 shadow-md shadow-primary/20" id="submitBtn">
+                提交订单
+            </button>
+</div>
+</footer>
+<!-- Simple Interaction Script -->
+<script src="../../assets/js/common.js"></script>
+<script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            this.disabled = true;
+            this.innerHTML = '<span class="material-symbols-outlined animate-spin mr-sm" data-icon="progress_activity">progress_activity</span> 处理中...';
+
+            setTimeout(() => {
+                this.disabled = false;
+                window.location.href = '../order/payment-success.html';
+            }, 1500);
+        });
+
+        // Soft ripple-like effect on address card hover
+        const addressCard = document.querySelector('section div.cursor-pointer');
+        addressCard.addEventListener('mouseenter', () => {
+            addressCard.style.boxShadow = '0 4px 12px rgba(0, 93, 170, 0.08)';
+        });
+        addressCard.addEventListener('mouseleave', () => {
+            addressCard.style.boxShadow = 'none';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container": "#f0eded",
+                        "inverse-surface": "#303030",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#a5c8ff",
+                        "divider-gray": "#F0F0F0",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-white": "#FFFFFF",
+                        "primary-fixed-dim": "#a5c8ff",
+                        "outline": "#707785",
+                        "error": "#ba1a1a",
+                        "text-gray": "#8C8C8C",
+                        "surface-dim": "#dcd9d9",
+                        "success-green": "#52C41A",
+                        "primary": "#005daa",
+                        "on-background": "#1b1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed": "#410005",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c0c7d6",
+                        "on-primary-container": "#fefcff",
+                        "surface-tint": "#005fae",
+                        "on-secondary-fixed-variant": "#41474f",
+                        "tertiary-container": "#db3239",
+                        "secondary-container": "#dee3ed",
+                        "deep-blue": "#096DD9",
+                        "on-surface-variant": "#404753",
+                        "on-secondary-container": "#5f656d",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "secondary": "#595f67",
+                        "on-secondary-fixed": "#161c23",
+                        "background": "#fcf9f8",
+                        "secondary-fixed-dim": "#c1c7d0",
+                        "on-primary-fixed-variant": "#004785",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary": "#b71423",
+                        "hover-blue": "#40A9FF",
+                        "on-tertiary-fixed-variant": "#930016",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed": "#dee3ed",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#001c3a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "warning-orange": "#FAAD14",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-bright": "#fcf9f8",
+                        "primary-fixed": "#d4e3ff",
+                        "primary-container": "#0075d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "gutter": "12px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "unit": "8px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "price-display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                        "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .active-filter {
+            background-color: #005daa;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- Top AppBar -->
+<header class="bg-surface-white dark:bg-inverse-surface w-full sticky top-0 z-50 border-b border-divider-gray dark:border-outline-variant flex justify-between items-center px-margin-mobile py-sm h-16">
+<div class="flex items-center gap-md">
+<button class="active:opacity-70 transition-opacity text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary-fixed-dim uppercase">LUXE TILES</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="active:opacity-70 transition-opacity text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pb-24">
+<!-- Search & Context Section -->
+<section class="px-margin-mobile pt-lg pb-md">
+<div class="relative w-full mb-lg">
+<div class="flex items-center bg-surface-white border border-divider-gray rounded-lg px-md h-12 shadow-sm focus-within:ring-1 focus-within:ring-primary transition-all cursor-pointer" onclick="location.href='search.html'">
+<span class="material-symbols-outlined text-text-gray mr-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface cursor-pointer" placeholder="搜索高端瓷砖..." type="text" value="Carrara Marble" readonly/>
+<button class="text-text-gray hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-sm overflow-x-auto pb-sm no-scrollbar">
+<button class="flex items-center gap-xs px-md py-xs rounded-full border border-divider-gray bg-surface-white whitespace-nowrap text-label-md font-label-md hover:bg-surface-container transition-colors">
+<span>空间</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</button>
+<button class="flex items-center gap-xs px-md py-xs rounded-full border border-divider-gray bg-surface-white whitespace-nowrap text-label-md font-label-md hover:bg-surface-container transition-colors">
+<span>风格</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</button>
+<button class="flex items-center gap-xs px-md py-xs rounded-full border border-divider-gray bg-surface-white whitespace-nowrap text-label-md font-label-md hover:bg-surface-container transition-colors">
+<span>价格</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</button>
+<div class="h-8 w-[1px] bg-divider-gray mx-xs flex-shrink-0"></div>
+<button class="flex items-center gap-xs px-md py-xs rounded-full bg-primary text-white whitespace-nowrap text-label-md font-label-md transition-colors">
+<span>有现货</span>
+</button>
+</div>
+<p class="mt-lg font-body-sm text-text-gray">找到 124 个结果 "<span class="text-on-surface font-semibold">Carrara Marble</span>"</p>
+</section>
+<!-- Product Grid (Masonry Effect via Two Columns) -->
+<section class="px-margin-mobile masonry-grid">
+<!-- Product Card 1 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group active:scale-[0.98] transition-transform cursor-pointer" onclick="location.href='../product/detail.html?id=CM-2024-V1'">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro photograph of a premium white Carrara marble tile with elegant grey veining. The lighting is soft and architectural, emphasizing the smooth, high-end polished texture. The aesthetic is minimalist and bright, fitting a luxury gallery showroom environment with cool blue undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CUzzXaa-kxz5zD4cWUg0ZHYBhjcad21iLIMtGAsyqqslXjiiOuxg-NGS9tALHS-D3aQC066c5f-T3x1xeu2xz6F32-OT7aQwmYF-I_JIHek8R7GmRBbWc2YRAMXhtBczw9XfhZkCUl31L71Rlz-0XwoxhdyP0i5iD0TLowyKmEFOa9pFTG6vdi1wUHaYvGZDdGFCEeHk9CsD5-X0qOwAMgWWK4f4pylw5QSjVFjcsfD5h1w189xYzwRNTBmld9LzSPtvaz2cuA"/>
+<button class="absolute top-sm right-sm bg-white/80 backdrop-blur-sm p-xs rounded-full text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">经典卡拉拉</h3>
+<p class="font-body-sm text-text-gray mb-xs">型号: CM-2024-V1</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">$89.50<span class="text-[12px] font-normal text-text-gray">/sqm</span></span>
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:bg-deep-blue active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group active:scale-[0.98] transition-transform cursor-pointer" onclick="location.href='../product/detail.html?id=SE-99-PRO'">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-angle shot of large-format Italian marble floor tiles in a sun-drenched modern living room. The scene is bright and airy, showcasing the reflective surface and intricate natural patterns. The mood is sophisticated and clean, using a palette of whites, soft greys, and sky blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1pDrnG-3yPpC7BY3YW2VSPtXjh5cCG_FqkF423vJd9mJaV2nvuKqOKObPkRPocGRLL27gTaaLvw0Nh2dJFYSk_aEdAM-CcIUzU2OdVUyCWcSL-XtVOlw2npxPret6t3y81GUbCj39C_QmJWlGWRBkFbrWxoXx5zIewdG_fsQtqt07nO4BuyuG1dCj_Z2i9WnfZrSTGBHhdKI6ttMgYzBZuEDQai2Vgj4ggipLuPoJXWT-ynqv3kqWjmwan4aY4YztBUsz_tICSg"/>
+<button class="absolute top-sm right-sm bg-white/80 backdrop-blur-sm p-xs rounded-full text-text-gray">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">雪花白精选</h3>
+<p class="font-body-sm text-text-gray mb-xs">型号: SE-99-PRO</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">$124.00<span class="text-[12px] font-normal text-text-gray">/sqm</span></span>
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:bg-deep-blue active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group active:scale-[0.98] transition-transform cursor-pointer" onclick="location.href='../product/detail.html?id=VS-882-L'">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern geometric grey and white tiles arranged in a contemporary pattern. The lighting highlights the matte finish and sharp edges of the tile design. The visual style is crisp and professional, emphasizing architectural precision and a clean aesthetic with light blue tonal layers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9_yHr6xy7vJzR1BLoyF45xu_JTokZWwRslnrEdj7a6H6ObUmPqL6CDqcv2rnLl9SyS4QCWjeH4moqWRgdHUHIANiB-3eiC8bo25l__Z6P8ciLtoX-2m5Pc9bx8ivmOmH0c0juav2w3CXwrNR_Zr0ydmzcIkSYEY-5Xu6SyD_D8nTm0Q86DAyGrtKAcQTvp-6UQA7OfsLkGI6Ocdwo6B2jjDWt5Ww68EpLRptaVQaMOSzH7z2bolmHpTq9ADEPWY9wDrUSYl34zA"/>
+<button class="absolute top-sm right-sm bg-white/80 backdrop-blur-sm p-xs rounded-full text-text-gray">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">威尼斯绸面</h3>
+<p class="font-body-sm text-text-gray mb-xs">型号: VS-882-L</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">$72.25<span class="text-[12px] font-normal text-text-gray">/sqm</span></span>
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:bg-deep-blue active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-white border border-divider-gray rounded-lg overflow-hidden flex flex-col group active:scale-[0.98] transition-transform cursor-pointer" onclick="location.href='../product/detail.html?id=CG-GOLD-01'">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed view of luxury polished floor tiles in a contemporary kitchen setting. Natural sunlight streams across the surface, creating bright highlights and long shadows. The color palette is composed of pristine whites and subtle blue-tinted shadows, maintaining a professional and high-quality feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdPXOgXQzvPP8Iry59YV41alTIBrfRB_yrPuQEM90u9MU_3vWX-guH_2QHb5UJXCgja9KEJM1AJf6o-RRF4meJgK0RgwhHdugYmL5LpUAkmtCmlSf5vvEsW3juIxl2KPKkqzNAeFU6mIEjhOnBJv-cNc0tKRRmQ7pzi-F5mBDq8o52zSk_jeDfHPvC07W6gVRDahqkBF2W3i8_8mjOu_DWlMhwNKGp6XFv99t1VRqvIlPRilODvqeHlJqCwzZjyOaaPuC83wwKRQ"/>
+<button class="absolute top-sm right-sm bg-white/80 backdrop-blur-sm p-xs rounded-full text-text-gray">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-sm flex flex-col flex-grow">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">卡拉卡拉金</h3>
+<p class="font-body-sm text-text-gray mb-xs">型号: CG-GOLD-01</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">$156.00<span class="text-[12px] font-normal text-text-gray">/sqm</span></span>
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:bg-deep-blue active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination / Load More -->
+<div class="px-margin-mobile mt-xl mb-lg">
+<button class="w-full h-12 border border-primary text-primary font-label-md rounded-lg hover:bg-surface-container-low transition-colors active:scale-[0.99]">
+                查看更多 24 个结果
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-white dark:bg-inverse-surface border-t border-divider-gray dark:border-outline-variant shadow-sm flex justify-around items-center h-16">
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:scale-95 transition-transform" href="../home/index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-medium active:scale-95 transition-transform" href="../product/category.html">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:scale-95 transition-transform relative" href="../cart/cart.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+<span class="absolute -top-1 right-2 bg-tertiary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray dark:text-outline active:scale-95 transition-transform" href="../user/profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</a>
+</nav>
+<script>
+        // Simple Interaction for Filter Selection
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('px-md') && this.classList.contains('rounded-full')) {
+                    // Toggle basic filter state visualization
+                    const icon = this.querySelector('.material-symbols-outlined:last-child');
+                    if (icon && icon.innerText === 'expand_more') {
+                        // Just a UI feedback for interaction
+                        this.classList.toggle('border-primary');
+                        this.classList.toggle('text-primary');
+                    }
+                }
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input');
+        const searchContainer = searchInput.parentElement;
+        
+        searchInput.addEventListener('focus', () => {
+            searchContainer.classList.add('border-primary', 'shadow-md');
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchContainer.classList.remove('border-primary', 'shadow-md');
+        });
+    </script>
+<script src="../../assets/js/common.js"></script>
+</body></html>

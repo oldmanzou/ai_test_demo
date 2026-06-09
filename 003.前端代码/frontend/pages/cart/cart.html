@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#dee3ed",
+                        "on-secondary-fixed-variant": "#41474f",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1c",
+                        "deep-blue": "#096DD9",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-container-highest": "#e4e2e1",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-white": "#FFFFFF",
+                        "tertiary-container": "#db3239",
+                        "on-secondary-container": "#5f656d",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#595f67",
+                        "inverse-on-surface": "#f3f0ef",
+                        "hover-blue": "#40A9FF",
+                        "on-error-container": "#93000a",
+                        "success-green": "#52C41A",
+                        "primary": "#005daa",
+                        "on-tertiary": "#ffffff",
+                        "divider-gray": "#F0F0F0",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-container": "#0075d5",
+                        "outline-variant": "#c0c7d6",
+                        "surface-container": "#f0eded",
+                        "background": "#fcf9f8",
+                        "on-primary-fixed": "#001c3a",
+                        "secondary-fixed": "#dee3ed",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed-variant": "#930016",
+                        "warning-orange": "#FAAD14",
+                        "on-surface-variant": "#404753",
+                        "tertiary": "#b71423",
+                        "on-primary-container": "#fefcff",
+                        "secondary-fixed-dim": "#c1c7d0",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#eae7e7",
+                        "surface-bright": "#fcf9f8",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "outline": "#707785",
+                        "on-secondary-fixed": "#161c23",
+                        "primary-fixed-dim": "#a5c8ff",
+                        "surface-tint": "#005fae",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary-fixed-variant": "#004785",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#a5c8ff",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "text-gray": "#8C8C8C"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "unit": "8px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "price-display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #F0F5FF; }
+    </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top AppBar (from Shared Components) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-14 bg-surface border-b border-divider-gray">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">瓷砖品牌商城</h1>
+</div>
+<div class="flex items-center gap-md">
+
+</div>
+</header>
+<main class="pt-14 pb-32 max-w-4xl mx-auto px-margin-mobile" id="app-container">
+<!-- View 1: Shopping Cart -->
+<section class="mt-lg" id="cart-view">
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-lg text-headline-lg">购物车 (3)</h2>
+<button class="text-primary font-label-md" id="clear-cart">管理</button>
+</div>
+<div class="space-y-md">
+<!-- Cart Item 1 -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md flex gap-md items-center">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<img class="w-20 h-20 object-cover rounded-md bg-surface-container" data-alt="Close-up of premium Italian porcelain floor tile with a subtle marble texture, high-gloss finish reflecting soft architectural lighting. The scene is set in a modern, minimalist gallery with clean white walls and a calm, sky blue color palette. The photograph captures the intricate gray veining and technical precision of the tile surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2CY6Xrbf6CNVr9UwkC2vIF1PhH3WXMaBqKMTDXDX9MAcuhyZp6dKpC-Z91WuCqN8dNgJQMC9mzzp8HqLxGgfSmDTs4bXN8Co_oGkRXa8_db9GBIQA5ssx-yDJd_wHhxjVfse-pYB5K5DIbRsWIeUxNKlhFhMOg6YVrmPQMKaiUtZBTjGw5ojEYnfv8EbnrEljzEW0eV7W_YwTy1-pGpPVojiPdqI8pm9V4p4S6voce_4xFVl_GyJXRKLekWsL3XuArlMzs5Rig">
+<div class="flex-1 overflow-hidden">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">卡拉拉白大理石瓷砖</h3>
+<p class="text-text-gray font-body-sm mb-sm">规格: 800x800mm | 亮面</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-price-display text-body-sm">¥128.00/m²</span>
+<div class="flex items-center border border-divider-gray rounded-full bg-surface-container-low px-xs ml-auto">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span></button>
+<span class="px-md font-body-md">15</span>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md flex gap-md items-center">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<img class="w-20 h-20 object-cover rounded-md bg-surface-container" data-alt="Professional architectural shot of cement-look matte tiles with a soft gray tone and refined industrial texture. The lighting is diffused and natural, highlighting the geometric precision of the tiling layout. The environment is a spacious, high-end commercial lobby with a clean, ultra-light blue background and minimal decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADD3Nw1munifzyVO3LCw7MhpVR9M-VUyMy-VGmw_f9YdfE11dvyPSYwEmcFHoXaeE-VqrH4aCizERCKiNVuBetNj9eze5aBLm2mbr6srw4cuGoRN7BC-Inkc87jkCFriv28-aZJ13qUqeP-vzcy319dVNnOGCHtLSRCI6I-S2B9Jv3r3Z5nv-cAYXzAc56woidWobRB6fD8Bhi5aE1xj-St1dUi3hcnJYQuTJP90pX0BkkCMj-zNQMKr-0bJM9s_dUamhndZ1wRw">
+<div class="flex-1 overflow-hidden">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">水泥灰现代简约地砖</h3>
+<p class="text-text-gray font-body-sm mb-sm">规格: 600x1200mm | 哑面</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-price-display text-body-sm">¥85.00/m²</span>
+<div class="flex items-center border border-divider-gray rounded-full bg-surface-container-low px-xs ml-auto">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span></button>
+<span class="px-md font-body-md">24</span>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md flex gap-md items-center">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<div class="relative">
+<img class="w-20 h-20 object-cover rounded-md opacity-60" data-alt="Exquisite teal-colored mosaic tiles for wall decoration, featuring a handmade, irregular glossy finish that catches the light beautifully. The scene is a luxurious bathroom setting with pristine white porcelain fixtures and soft, high-key lighting. The visual aesthetic is professional, modern, and emphasizes the tactile quality of the ceramic material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3msttzpfD9OJud07zfGyAWRGwLPdzMmc6u3N4-Y943pts8Gwxg4LSX4PqLapPcpw7ni4_wRREF-2c-ZUcBgaJW8qeqejTs9nBEBS4f-H6oC2eWPNatI2PvjiN6uIL2owXJC6Vm9yS2bMP4onCnJoMeDKQ-dzmachH7uK6lUyUXt7Kb7mqvRVQ3oCKrcBxxAQn2mG_0o_a7NizuQgI4TLNEJ2tur30TxSzUqe0QyxE_RalJyExx-_3US3lFyQ4h4dF093U_3WlEw">
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 rounded-md">
+<span class="text-surface-white text-[10px] bg-black/50 px-1 rounded">库存紧缺</span>
+</div>
+</div>
+<div class="flex-1 overflow-hidden">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate opacity-60">莫兰迪色手工艺术砖</h3>
+<p class="text-text-gray font-body-sm mb-sm">规格: 100x100mm | 釉面</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-price-display opacity-60 text-body-sm">¥199.00/盒</span>
+<div class="flex items-center border border-divider-gray rounded-full bg-surface-container-low px-xs opacity-60 ml-auto">
+<button class="p-1"><span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span></button>
+<span class="px-md font-body-md">2</span>
+<button class="p-1"><span class="material-symbols-outlined text-[18px]" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Total Bar (Cart) -->
+<div class="fixed bottom-14 left-0 w-full bg-surface-white border-t border-divider-gray px-margin-mobile py-md flex items-center justify-between z-40">
+<div class="flex items-center gap-sm">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary" type="checkbox">
+<span class="font-label-md text-on-surface">全选</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="text-right">
+<p class="font-label-sm text-text-gray">不含运费</p>
+<p class="font-price-display text-primary">合计: ¥3960.00</p>
+</div>
+<button class="bg-primary hover:bg-hover-blue text-on-primary font-headline-sm px-xl py-3 rounded-full transition-all shadow-md active:scale-95" onclick="switchView('checkout-view')">
+                        结算 (2)
+                    </button>
+</div>
+</div>
+</section>
+<!-- View 2: Checkout Page (Hidden by default) -->
+<section class="mt-lg hidden" id="checkout-view">
+<div class="flex items-center gap-sm mb-lg">
+<button class="p-1" onclick="switchView('cart-view')">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<h2 class="font-headline-lg text-headline-lg">确认订单</h2>
+</div>
+<!-- Delivery Address Card -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md mb-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-tertiary to-primary opacity-70"></div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<div class="flex-1">
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-headline-sm">张艺博</span>
+<span class="text-text-gray font-body-md">138****8888</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-1.5 py-0.5 rounded">默认</span>
+</div>
+<p class="font-body-md text-on-surface-variant">广东省佛山市禅城区季华五路 21 号 陶瓷交易中心 A 座 808 室</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Product Summary -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md mb-lg">
+<h3 class="font-label-md text-text-gray mb-md uppercase tracking-wider">商品清单</h3>
+<div class="space-y-md">
+<div class="flex gap-md">
+<img class="w-16 h-16 object-cover rounded bg-surface-container" data-alt="Marble tile closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAV-1ZQTlfYDA-rIV3AB5hfEvLiv3Es1dCtV_b6vwnUC4e8iaNfUA1CQtbMDEDoeUWhE6jiTtrJ95ZeGFbebyYkIqtHABKpbLuxCKsgLEwMoFuiC7GC_WFIoIc4dbIQWbJip_S8s52Ubeh_v3p5VB_1m4cPoNWJEyaiaVtRRw3lmNy-_2CaH1sBW-1FWFT2vabqaKY7y2TgpaK8RuGL6Fz244X0WgI2yXOLn9eA468A9a2lauH0n0kfLp-nmMAbrujB4o4CnC5aQ">
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-body-md text-on-surface font-semibold">卡拉拉白大理石瓷砖</span>
+<span class="font-body-md">¥1920.00</span>
+</div>
+<div class="flex justify-between text-text-gray font-body-sm mt-xs">
+<span class="">800x800mm | x15</span>
+<span class="">¥128.00/m²</span>
+</div>
+</div>
+</div>
+<div class="flex gap-md">
+<img class="w-16 h-16 object-cover rounded bg-surface-container" data-alt="Cement tile closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0TcKn5bHiPI1UUnxAa8r7ObiPJH9a7AIGmZfsRVFqYlCzEIGdDJgCJnfUirYUTWk9IIEijiRneq36mjWPMTT2tEiXC8ZNRB187izTJcMWtKJfgqNf-GZwkNEHlXTVFt3V2qCXgLnp9YsEF14wG69xOqMIYr_3sPf_HnRs4xXEZ_qYH3sjSsQ9hRaNLJyK76K3Huz-6zm49xcUVh6P84Hiut2QMzo71glGt02DygHBnMn4oY2xl7PFHdCbZwX5c0f7Qst1SWCxlg">
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-body-md text-on-surface font-semibold">水泥灰现代简约地砖</span>
+<span class="font-body-md">¥2040.00</span>
+</div>
+<div class="flex justify-between text-text-gray font-body-sm mt-xs">
+<span class="">600x1200mm | x24</span>
+<span class="">¥85.00/m²</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Remarks -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md mb-lg">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-md text-on-surface">订单备注</span>
+<span class="text-text-gray font-body-sm">选填</span>
+</div>
+<textarea class="w-full bg-surface-container-low border-divider-gray rounded-lg p-sm font-body-md focus:ring-primary focus:border-primary resize-none" placeholder="请告知您的特殊施工需求或物流要求..." rows="2"></textarea>
+</div>
+<!-- Amount Breakdown -->
+<div class="bg-surface-white rounded-lg border border-divider-gray p-md mb-lg space-y-md">
+<div class="flex justify-between font-body-md">
+<span class="text-on-surface-variant">商品总额</span>
+<span class="text-on-surface font-semibold">¥3960.00</span>
+</div>
+<div class="flex justify-between font-body-md">
+<div class="flex items-center gap-xs">
+<span class="text-on-surface-variant">运费说明</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="info">info</span>
+</div>
+<span class="text-warning-orange font-semibold">线下协商</span>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded border border-dashed border-divider-gray">
+<p class="text-text-gray font-body-sm leading-relaxed">
+                        由于瓷砖属于重货，系统暂不支持自动核算运费。提交订单后，专属管家将在 15 分钟内联系您确认物流方案及费用。
+                    </p>
+</div>
+<div class="pt-md border-t border-divider-gray flex justify-between items-center">
+<span class="font-headline-sm">实付款</span>
+<span class="text-primary font-price-display text-price-display">¥3960.00</span>
+</div>
+</div>
+<!-- Submit Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-white border-t border-divider-gray px-margin-mobile py-md flex items-center justify-between z-40 md:pb-8">
+<div class="flex flex-col">
+<span class="font-label-sm text-text-gray">共 2 件商品</span>
+<div class="flex items-baseline gap-xs">
+<span class="font-label-sm text-primary">待核运费</span>
+<span class="text-primary font-price-display">¥3960.00</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-hover-blue text-on-primary font-headline-sm px-xl py-3 rounded-full transition-all shadow-md active:scale-95 flex items-center gap-sm" onclick="location.href='../order/payment-success.html'">
+                    提交订单
+                    <span class="material-symbols-outlined" data-icon="done_all">done_all</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (from Shared Components) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-sm bg-surface-white shadow-lg pb-safe md:hidden" id="main-nav">
+<a class="flex flex-col items-center justify-center text-text-gray hover:text-primary transition-colors" href="../home/index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray hover:text-primary transition-colors" href="../product/category.html">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:text-primary transition-colors" href="cart.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: &quot;FILL&quot; 1;">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-gray hover:text-primary transition-colors" href="../user/profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</a>
+</nav>
+<script>
+        function switchView(viewId) {
+            const cartView = document.getElementById('cart-view');
+            const checkoutView = document.getElementById('checkout-view');
+            const nav = document.getElementById('main-nav');
+
+            if (viewId === 'checkout-view') {
+                cartView.classList.add('hidden');
+                checkoutView.classList.remove('hidden');
+                nav.classList.add('hidden'); // Hide global nav on transactional sub-page
+                window.scrollTo(0, 0);
+            } else {
+                cartView.classList.remove('hidden');
+                checkoutView.classList.add('hidden');
+                nav.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Add some interaction to quantity buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (icon && (icon.innerText === 'add' || icon.innerText === 'remove')) {
+                    const counter = btn.parentElement.querySelector('span');
+                    let val = parseInt(counter.innerText);
+                    if (icon.innerText === 'add') val++;
+                    if (icon.innerText === 'remove' && val > 1) val--;
+                    counter.innerText = val;
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+<script src="../../assets/js/common.js"></script>
+</body></html>

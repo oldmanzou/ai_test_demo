@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>瓷砖品牌商城 - 搜索</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#d4e3ff",
+                      "outline-variant": "#c0c7d6",
+                      "on-secondary-container": "#5f656d",
+                      "surface-tint": "#005fae",
+                      "surface": "#fcf9f8",
+                      "on-surface": "#1b1c1c",
+                      "deep-blue": "#096DD9",
+                      "inverse-surface": "#303030",
+                      "secondary-fixed": "#dee3ed",
+                      "secondary-fixed-dim": "#c1c7d0",
+                      "primary-container": "#0075d5",
+                      "on-secondary-fixed": "#161c23",
+                      "surface-variant": "#e4e2e1",
+                      "on-primary-fixed": "#001c3a",
+                      "surface-container": "#f0eded",
+                      "on-tertiary-fixed-variant": "#930016",
+                      "inverse-primary": "#a5c8ff",
+                      "divider-gray": "#F0F0F0",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#db3239",
+                      "surface-container-high": "#eae7e7",
+                      "primary-fixed-dim": "#a5c8ff",
+                      "hover-blue": "#40A9FF",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb3ae",
+                      "primary": "#005daa",
+                      "text-gray": "#8C8C8C",
+                      "outline": "#707785",
+                      "success-green": "#52C41A",
+                      "on-secondary-fixed-variant": "#41474f",
+                      "on-tertiary-fixed": "#410005",
+                      "secondary-container": "#dee3ed",
+                      "secondary": "#595f67",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dcd9d9",
+                      "tertiary": "#b71423",
+                      "background": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#fcf9f8",
+                      "surface-white": "#FFFFFF",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-fixed-variant": "#004785",
+                      "error-container": "#ffdad6",
+                      "on-background": "#1b1c1c",
+                      "on-primary-container": "#fefcff",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-error-container": "#93000a",
+                      "warning-orange": "#FAAD14",
+                      "tertiary-fixed": "#ffdad7",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-surface-variant": "#404753"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "gutter": "12px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "price-display": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "price-display": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F0F5FF; /* As per style guidance Ultra Light Blue background */
+        }
+        .search-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+  </head>
+<body class="min-h-screen text-on-surface">
+<!-- Top Bar Component -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface h-14 border-b border-divider-gray flex items-center px-margin-mobile gap-sm">
+<button aria-label="返回" class="flex items-center justify-center w-10 h-10 transition-colors duration-200 hover:bg-surface-container-low rounded-full" onclick="location.href='../home/index.html'">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex-1 relative flex items-center bg-surface-container-low rounded-lg px-3 h-10 border border-transparent focus-within:border-primary focus-within:bg-white transition-all">
+<span class="material-symbols-outlined text-text-gray text-xl mr-2">search</span>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-body-md font-body-md placeholder-text-gray" placeholder="搜索型号、风格或空间" type="text" id="search-input"/>
+</div>
+<button class="text-primary font-label-md text-label-md px-2 py-1 active:opacity-60 transition-opacity" onclick="performSearch()">
+            搜索
+        </button>
+</nav>
+<!-- Content Canvas -->
+<main class="pt-20 pb-10 px-margin-mobile space-y-lg">
+<!-- Section 1: 热门搜索 -->
+<section>
+<div class="flex items-center mb-md">
+<span class="material-symbols-outlined text-primary text-xl mr-1" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<h2 class="text-headline-sm font-headline-sm">热门搜索</h2>
+</div>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-1.5 bg-surface-white border border-divider-gray rounded-lg text-body-md font-body-md hover:border-primary hover:text-primary transition-all" onclick="location.href='../product/search-results.html?q=大理石瓷砖'">大理石瓷砖</button>
+<button class="px-md py-1.5 bg-surface-white border border-divider-gray rounded-lg text-body-md font-body-md hover:border-primary hover:text-primary transition-all" onclick="location.href='../product/search-results.html?q=现代简约'">现代简约</button>
+<button class="px-md py-1.5 bg-surface-white border border-divider-gray rounded-lg text-body-md font-body-md hover:border-primary hover:text-primary transition-all" onclick="location.href='../product/search-results.html?q=客厅砖'">客厅砖</button>
+<button class="px-md py-1.5 bg-surface-white border border-divider-gray rounded-lg text-body-md font-body-md hover:border-primary hover:text-primary transition-all" onclick="location.href='../product/search-results.html?q=哑光灰'">哑光灰</button>
+<button class="px-md py-1.5 bg-surface-white border border-divider-gray rounded-lg text-body-md font-body-md hover:border-primary hover:text-primary transition-all" onclick="location.href='../product/search-results.html?q=柔光白'">柔光白</button>
+</div>
+</section>
+<!-- Section 2: 最近搜索 -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-text-gray text-xl mr-1">history</span>
+<h2 class="text-headline-sm font-headline-sm">最近搜索</h2>
+</div>
+<button class="flex items-center text-text-gray hover:text-error transition-colors" onclick="clearHistory()">
+<span class="material-symbols-outlined text-lg mr-1">delete</span>
+<span class="text-label-sm font-label-sm">清空历史</span>
+</button>
+</div>
+<div class="space-y-sm" id="history-list">
+<div class="flex items-center justify-between py-2 border-b border-divider-gray">
+<span class="text-body-md font-body-md">全抛釉 800x800</span>
+<span class="material-symbols-outlined text-text-gray text-lg">close</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-divider-gray">
+<span class="text-body-md font-body-md">意式极简 厨房</span>
+<span class="material-symbols-outlined text-text-gray text-lg">close</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-divider-gray">
+<span class="text-body-md font-body-md">户外防滑地砖</span>
+<span class="material-symbols-outlined text-text-gray text-lg">close</span>
+</div>
+</div>
+</section>
+<!-- Section 3: 按风格找 (Bento Grid Style) -->
+<section>
+<div class="flex items-center mb-md">
+<span class="material-symbols-outlined text-primary text-xl mr-1">category</span>
+<h2 class="text-headline-sm font-headline-sm">按风格找</h2>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Large Featured Category -->
+<div class="col-span-2 relative h-32 rounded-lg overflow-hidden group cursor-pointer" onclick="location.href='../product/search-results.html?style=现代'">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious modern living room with sprawling light-colored marble flooring that reflects the soft, ambient natural light from floor-to-ceiling windows. The interior design is sleek and professional, featuring clean lines and a minimalist aesthetic with neutral tones and sky blue accents. The atmosphere is bright, clean, and architecturally precise, perfectly capturing the high-end retail tile brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGwHGPXWdfaVS4j3TfcGrv1wxz7daMI18G8bWhP6oeyswhhLNy5OjMPCitLTcMftTl1TciTQeO-Y7GIC10fGNiNiuNj7y0K0cNaV9_BPldNoBm_p3lkUN36D3fxrfO4yulp8a_PzREsBGhcFd7ZHjQeagXVJtLQ6T0ReQQwrVBKSVHdzMmTM3-h0I5Hz29ach5JN8e5TDvfBwZPzdhuI0yeAIA9BxiPNO04tPaLh5BnQHs_qg_VC4azlYDsqzliTNDNEPi1I-i6A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-headline-sm text-headline-sm">现代风格</span>
+</div>
+</div>
+<!-- Smaller Grid Items -->
+<div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer" onclick="location.href='../product/search-results.html?style=极简主义'">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist architectural detail showing matte grey tile walls in a high-key illuminated space. The visual style is crisp and geometric, emphasizing technical precision and structural integrity. Subtle shadows and tonal layering create a sense of depth without clutter. The palette is a clean mix of white and ultra light blue, evoking a professional showroom gallery feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyWs8zgQq8t2wuSGhIPVb5YXlx1MJ1YWTRtAvmF0T-hNvGScVzukVXrw5lNXsFHCG6K8gfQfDqy8C8pM0xc5F95i7c8CYux3mmq3G-nFh6qLTTWh8l3Y-hICEct2b4dKH0TTKKNuEKzbF7_8LrW0VTcPUjrMmm8kVP3gIPrc9p5atlB6SVjIJVfWZEzXCvopPrwzG0nd2UBUxZE5JHCtj12qgyxDKLeyO2TqQgTjWjBc6-YdVv-2nCIe8T_HuHTqSmnGjE0Lo-8Q"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white font-headline-sm text-headline-sm">极简主义</span>
+</div>
+<div class="absolute bottom-3 left-3">
+<span class="text-white font-label-md text-label-md shadow-sm">极简主义</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer" onclick="location.href='../product/search-results.html?style=北欧风'">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright and airy Nordic-style interior with light oak accents and white ceramic tiles on the floor. The lighting is soft and diffuse, creating an inviting and clean environment. The composition is systematic and balanced, following a professional 8px grid model. The overall aesthetic is one of spatial clarity and modern minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaIC_KluCc85NRzOnpM2DijPTkKGHuqQONWrAw9xQeUBKkXbZOMfimvzkJCqVnuoGKFle5nuWkWudh6OpuN4kwFwqoyE_sS_cwrE245wU9dLyedB8YA7Es2i1lJoL0U7QSovf9Q6eYQKb0w7mygpGgXg_-BTHLWRDo2amQu-EBsw1RVERxXl2o4xZgRXitntj_x4aqRk-VfJxPKQLVFStqPC0ZDVGf0QL2aJK2zd8ecITxEkbDaEBHJUn_7sqPhxTwQe_-tiPFRg"/>
+<div class="absolute bottom-3 left-3">
+<span class="text-white font-label-md text-label-md shadow-sm">北欧风</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer" onclick="location.href='../product/search-results.html?style=中式'">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern Chinese-inspired tea room featuring elegant dark wood furniture contrasted against textured stone-look tiles. The lighting is warm yet crisp, highlighting the geometric patterns of the tiles. The mood is serene and professional, showing a high-quality retail application of traditional styles in a modern architectural context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3jGrBm_2xEW3FVOmdWgU4DLEflKBKVAAM6gTwaTpNM5ZK6FN7fsMOuauKFRKDAoAJ6j-lB01GF3eyoSAe3nWX1ZfA1-ui_PCaaXvfHFTx0jC6X7KxoAzUEUS22Pxws3XJQoakQgz2BUc2oUCX0cKbeBeqUviRcYkpDPUQ9R20gbGyexglBNtV9C_RxZAkBxJFSSlMvmLvYxWETM87Y5UuNgB005l-0c4dRJQI6x-Xq3oje93pgMLv8EOm3RcUshjoFxMDkAsTaA"/>
+<div class="absolute bottom-3 left-3">
+<span class="text-white font-label-md text-label-md shadow-sm">中式风格</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden group cursor-pointer" onclick="location.href='../product/search-results.html?style=工业风'">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An industrial loft space with exposed brick and large-format dark concrete-texture tiles. The shot is wide and architectural, emphasizing the expansive floor space and professional installation. The lighting is high-contrast but clean, fitting the modern minimalist tile brand aesthetic. Deep margins and intentional negative space enhance the gallery feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn3KV-N2p6gtqwwfcecHikGE8l7fY56NqDao4bOStJAZMECMZNlBaVenv8bUcHZ3ocrMj8HjlDF4JkMa5GNKt1zxEvOBWXTb-EvzTQ4jyLEDnR8y_yi0v7wqGo6Pswmy9zhv0JQ5SvGbk8cXwL8Hq5Mou-PXH9pHyvwpHiFYQQzbFV6Azt61rywV4IYtkGnG2BuZvH-SfXxR99TXMKwlKyjYFCnAfoTHdR2U0nS-7K7ZAKIpzPl62cm-gZEwJqkL4pXZqUrGryJQ"/>
+<div class="absolute bottom-3 left-3">
+<span class="text-white font-label-md text-label-md shadow-sm">工业风</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation suppressed per relevance check (Focused Task) -->
+<!-- However, the JSON includes it, but since this is a search page (task-focused), the prompt rules suggest suppression. But to be safe and show layout skills, I will include a subtle footer or just respect the 'transactional' rule. Rule: "If the page content does not logically sit under the categories defined... suppress navigation" -->
+<script>
+        function clearHistory() {
+            const list = document.getElementById('history-list');
+            list.style.opacity = '0';
+            list.style.transform = 'translateY(10px)';
+            list.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                list.innerHTML = '<div class="text-center py-10 text-text-gray text-body-sm font-body-sm">暂无搜索历史</div>';
+                list.style.opacity = '1';
+                list.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
+        function performSearch() {
+            const query = document.getElementById('search-input').value.trim();
+            if (query) {
+                location.href = '../product/search-results.html?q=' + encodeURIComponent(query);
+            }
+        }
+
+        // Enter key on search input
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Add small ripple effect to buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                this.classList.add('scale-95');
+                setTimeout(() => this.classList.remove('scale-95'), 100);
+            });
+        });
+    </script>
+<script src="../../assets/js/common.js"></script>
+</body></html>
